@@ -1,7 +1,9 @@
 export const light = {
   colors: {
-    primary: '#000000',
-    secondary: '#FFFFFF',
-    tertiary: '#F2F2F2',
+    alexy: '#FF0000',
+    background: {
+      main: '#FFFFFF',
+      secondary: '#F7F9FB',
+    },
   },
 };

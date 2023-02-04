@@ -1,12 +1,15 @@
 import React from 'react';
 import { styled } from '@stitches/react';
+import LeftBar from '../elements/LeftBar';
+import CenterArea from '../elements/CenterArea';
+import RightBar from '../elements/RightBar';
 
 export default function DashboardArea() {
   return (
     <Dashboard>
-      <div>Div 1</div>
-      <div>Div 2</div>
-      <div>Div 3</div>
+      <LeftBar />
+      <CenterArea />
+      <RightBar />
     </Dashboard>
   );
 }
@@ -14,7 +17,10 @@ export default function DashboardArea() {
 const Dashboard = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  border: '1px solid red',
+  background: '#fff',
+  //   border: '1px solid red',
   textAlign: 'center',
-  width: '100%',
+  maxWidth: '1440px',
+  height: '1024px',
+  borderRadius: '16px',
 });
