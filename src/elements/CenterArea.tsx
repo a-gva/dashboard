@@ -1,4 +1,3 @@
-import React from 'react';
 import { styled } from '@stitches/react';
 
 export default function CenterArea() {

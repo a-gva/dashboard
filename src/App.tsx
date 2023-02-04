@@ -1,4 +1,4 @@
-import DashboardArea from './components/DashboardArea';
+import DashboardArea from './views/DashboardArea';
 
 function App() {
   return (
