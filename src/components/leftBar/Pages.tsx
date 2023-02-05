@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import arrow from '../assets/arrowLineRight.svg';
+import arrow from '../../assets/arrowLineRight.svg';
 
 export default function Pages({ data }) {
   const { items, label } = data;

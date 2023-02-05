@@ -1,10 +1,10 @@
 import { styled } from '@stitches/react';
 
-import UserLoginDiv from '../components/UserLogin';
-import FavoritesRecently from '../components/FavoritesRecently';
-import Dashboards from '../components/Dashboards';
-import Pages from '../components/Pages';
-import Footer from '../components/Footer';
+import UserLoginDiv from '../components/leftBar/UserLogin';
+import FavoritesRecently from '../components/leftBar/FavoritesRecently';
+import Dashboards from '../components/leftBar/Dashboards';
+import Pages from '../components/leftBar/Pages';
+import Footer from '../components/leftBar/Footer';
 
 import { leftBar } from '../data/leftBar';
 const { userLogin, favoritesRecently, dashboards, pages, footer } = leftBar;
