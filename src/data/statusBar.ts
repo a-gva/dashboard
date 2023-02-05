@@ -1,4 +1,4 @@
-export const rightBar = {
+export const statusBar = {
   notifications: {
     label: 'Notifications',
     items: [

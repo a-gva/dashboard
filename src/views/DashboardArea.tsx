@@ -1,14 +1,14 @@
 import { styled } from '@stitches/react';
-import LeftBar from '../elements/LeftBar';
+import NavBar from '../elements/NavBar';
 import CenterArea from '../elements/CenterArea';
-import RightBar from '../elements/RightBar';
+import StatusBar from '../elements/StatusBar';
 
 export default function DashboardArea() {
   return (
     <Dashboard>
-      <LeftBar />
+      <NavBar />
       <CenterArea />
-      {/* <RightBar /> */}
+      <StatusBar />
     </Dashboard>
   );
 }

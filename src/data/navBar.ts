@@ -1,4 +1,4 @@
-export const leftBar = {
+export const navBar = {
   userLogin: {
     name: 'ByeWind',
     image: 'byeWind.svg',

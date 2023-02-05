@@ -4,10 +4,10 @@ import Activities from '../components/rightBar/Activities';
 import Contacts from '../components/rightBar/Contacts';
 import Notifications from '../components/rightBar/Notifications';
 
-import { rightBar } from '../data/rightBar';
-const { notifications, activities, contacts } = rightBar;
+import { statusBar } from '../data/statusBar';
+const { notifications, activities, contacts } = statusBar;
 
-export default function RightBar() {
+export default function StatusBar() {
   return (
     <RightBarArea>
       <RightBarDiv>

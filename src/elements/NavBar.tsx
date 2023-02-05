@@ -6,10 +6,10 @@ import Dashboards from '../components/leftBar/Dashboards';
 import Pages from '../components/leftBar/Pages';
 import Footer from '../components/leftBar/Footer';
 
-import { leftBar } from '../data/leftBar';
-const { userLogin, favoritesRecently, dashboards, pages, footer } = leftBar;
+import { navBar } from '../data/navBar';
+const { userLogin, favoritesRecently, dashboards, pages, footer } = navBar;
 
-export default function LeftBar() {
+export default function NavBar() {
   return (
     <LeftBarArea>
       <UserLoginDiv data={userLogin} />
