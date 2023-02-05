@@ -8,7 +8,7 @@ export default function DashboardArea() {
     <Dashboard>
       <LeftBar />
       <CenterArea />
-      <RightBar />
+      {/* <RightBar /> */}
     </Dashboard>
   );
 }
