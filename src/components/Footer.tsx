@@ -12,7 +12,17 @@ export default function Footer({ data }) {
 }
 
 const FooterDiv = styled('div', {
-  // background: 'pink',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  textAlign: 'center',
+  justifyContent: 'center',
+  height: '76px',
+  width: '100%',
+  marginTop: 'auto',
+  // border: '1px solid red',
+  // position at the bottom
+  // flexBasis: 'auto',
 });
 
 const LogoImage = styled('img', {});

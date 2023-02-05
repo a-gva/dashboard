@@ -1,12 +1,19 @@
 import { styled } from '@stitches/react';
+import arrow from '../assets/arrowLineRight.svg';
 
 export default function Dashboards({ data }) {
-  const { items } = data;
+  const { items, label } = data;
+
   return (
     <DashboardsDiv>
+      <LabelDiv>
+        <LabelItem>{label}</LabelItem>
+      </LabelDiv>
       {items.map((item: any) => {
         return (
           <Item key={item.name}>
+            <LabelArrow src={arrow} />
+
             <Image src={`src/assets/${item.image}`} alt='' />
             <Name>{item.name}</Name>
           </Item>
@@ -16,12 +23,31 @@ export default function Dashboards({ data }) {
   );
 }
 
-const DashboardsDiv = styled('div', {});
+const DashboardsDiv = styled('div', {
+  paddingBottom: '6px',
+  fontSize: '14px',
+});
+
+const LabelDiv = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  color: '#A0A3BD',
+  gap: '20px',
+  padding: '24px 0 6px 0',
+});
+
+const LabelArrow = styled('img', {});
+
+const LabelItem = styled('p', {
+  // background: 'blue',
+});
 
 const Item = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  gap: '5px',
+  alignItems: 'center',
+  gap: '6px',
+  padding: '6px 0',
 });
 
 const Image = styled('img', {});

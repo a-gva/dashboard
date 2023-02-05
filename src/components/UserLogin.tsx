@@ -14,13 +14,17 @@ export default function UserLogin({ data }) {
 const UserLoginDiv = styled('div', {
   display: 'flex',
   flexDirection: 'Row',
-  alignItems: 'center',
-  justifyContent: 'center',
   gap: '10px',
+  paddingBottom: '6px',
 });
 
-const Name = styled('div', {
-  // background: 'blue',
+const Name = styled('p', {
+  fontFamily: 'Inter',
+  fontStyle: 'normal',
+  fontWeight: '400',
+  fontSize: '14px',
+  lineHeight: '20px',
+  color: '#1C1C1C',
 });
 
 const Avatar = styled('img', {

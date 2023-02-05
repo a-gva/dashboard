@@ -1,13 +1,14 @@
 export const leftBar = {
-  label: [' Favorites', 'Recently'],
   userLogin: {
     name: 'ByeWind',
     image: 'byeWind.png',
   },
   favoritesRecently: {
+    label: [' Favorites', 'Recently'],
     items: ['Overview', 'Projects'],
   },
   dashboards: {
+    label: 'Dashboards',
     items: [
       {
         name: 'Default',
@@ -28,6 +29,7 @@ export const leftBar = {
     ],
   },
   pages: {
+    label: 'Pages',
     items: [
       {
         name: 'User Profile',
