@@ -1,10 +1,11 @@
 export const leftBar = {
+  label: [' Favorites', 'Recently'],
   userLogin: {
     name: 'ByeWind',
     image: 'byeWind.png',
   },
   favoritesRecently: {
-    items: ['Overwiew', 'Projects'],
+    items: ['Overview', 'Projects'],
   },
   dashboards: {
     items: [
@@ -30,31 +31,35 @@ export const leftBar = {
     items: [
       {
         name: 'User Profile',
-        image: 'userProfile.png',
+        image: 'userProfile.svg',
         subItems: [
-          { name: 'Overwiew', isActive: false },
+          { name: 'Overview', isActive: false },
           { name: 'Projects', isActive: true },
           { name: 'Campaigns', isActive: false },
           { name: 'Documents', isActive: false },
-          { name: 'Folowers', isActive: false },
+          { name: 'Followers', isActive: false },
         ],
       },
       {
         name: 'Account',
-        image: 'account.png',
+        image: 'account.svg',
       },
       {
         name: 'Corporate',
-        image: 'corporate.png',
+        image: 'corporate.svg',
       },
       {
         name: 'Blog',
-        image: 'blog.png',
+        image: 'blog.svg',
+      },
+      {
+        name: 'Social',
+        image: 'social.svg',
       },
     ],
   },
   footer: {
-    name: 'Log Out',
-    image: 'logOut.png',
+    logoImage: 'logoImage.svg',
+    logoText: 'logoText.svg',
   },
 };

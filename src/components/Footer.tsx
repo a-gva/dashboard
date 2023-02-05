@@ -1,10 +1,19 @@
 import { styled } from '@stitches/react';
 
 export default function Footer({ data }) {
-  const { name, image } = data;
-  return <FooterDiv>Footer</FooterDiv>;
+  const { logoImage, logoText } = data;
+
+  return (
+    <FooterDiv>
+      <LogoImage src={`src/assets/${logoImage}`} alt={logoImage} />
+      <LogoText src={`src/assets/${logoText}`} alt={logoText} />
+    </FooterDiv>
+  );
 }
 
 const FooterDiv = styled('div', {
-  background: 'pink',
+  // background: 'pink',
 });
+
+const LogoImage = styled('img', {});
+const LogoText = styled('img', {});

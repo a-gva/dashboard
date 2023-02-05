@@ -2,9 +2,6 @@ import { styled } from '@stitches/react';
 
 export default function Dashboards({ data }) {
   const { items } = data;
-  console.log('Dashboards data', data);
-  console.log('Dashboards items', items);
-
   return (
     <DashboardsDiv>
       {items.map((item: any) => {

@@ -2,7 +2,7 @@ import { styled } from '@stitches/react';
 
 export default function FavoritesRecently({ data }) {
   const { items } = data;
-  console.log(items);
+
   return (
     <FavoritesRecentlyDiv>
       {items.map((item: string) => {
