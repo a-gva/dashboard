@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import arrow from '../../assets/icons/arrowLineRight.svg';
+import arrow from '/assets/icons/arrowLineRight.svg';
 
 interface IData {
   label: string;
@@ -21,8 +21,7 @@ export default function Dashboards({ data }: { data: IData }) {
         return (
           <Item key={item.name}>
             <LabelArrow src={arrow} />
-
-            <Image src={`src/assets/icons/${item.image}`} alt='' />
+            <Image src={`/assets/icons/${item.image}`} alt='' />
             <Name>{item.name}</Name>
           </Item>
         );

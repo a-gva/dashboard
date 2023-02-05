@@ -22,7 +22,7 @@ export default function Notifications({ data }: { data: IData }) {
             <Notification key={index}>
               <ImageDiv>
                 <ImageBg>
-                  <Image src={`src/assets/icons/${item.image}`} alt='' />
+                  <Image src={`/assets/icons/${item.image}`} alt='' />
                 </ImageBg>
               </ImageDiv>
               <MessageDiv>

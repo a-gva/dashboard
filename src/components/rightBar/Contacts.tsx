@@ -16,7 +16,7 @@ export default function Contacts({ data }: { data: IData }) {
           return (
             <Notification key={index}>
               <ImageDiv>
-                <Image src={`src/assets/users/named/${item.image}`} alt='' />
+                <Image src={`/assets/users/named/${item.image}`} alt='' />
               </ImageDiv>
               <p>{item.name}</p>
             </Notification>

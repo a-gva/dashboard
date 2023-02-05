@@ -10,8 +10,8 @@ export default function Footer({ data }: { data: IData }) {
 
   return (
     <FooterDiv>
-      <LogoImage src={`src/assets/brand/${logoImage}`} alt={logoImage} />
-      <LogoText src={`src/assets/brand/${logoText}`} alt={logoText} />
+      <LogoImage src={`/assets/brand/${logoImage}`} alt={logoImage} />
+      <LogoText src={`/assets/brand/${logoText}`} alt={logoText} />
     </FooterDiv>
   );
 }

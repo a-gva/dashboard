@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import dot from '../../assets/icons/dot.svg';
+import dot from '/assets/icons/dot.svg';
 
 interface IData {
   items: Array<string>;

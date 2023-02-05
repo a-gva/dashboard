@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import lineVertical from '../../assets/icons/lineVertical.svg';
+import lineVertical from '/assets/icons/lineVertical.svg';
 
 interface IData {
   label: string;
@@ -22,10 +22,7 @@ export default function Activities({ data }: { data: IData }) {
             <Notification key={item.message}>
               <ImageDiv>
                 <ImageBg>
-                  <Image
-                    src={`src/assets/users/unnamed/${item.image}`}
-                    alt=''
-                  />
+                  <Image src={`/assets/users/unnamed/${item.image}`} alt='' />
                 </ImageBg>
                 {index !== items.length - 1 && (
                   <LineDiv>

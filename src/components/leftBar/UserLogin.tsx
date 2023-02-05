@@ -10,7 +10,7 @@ export default function UserLogin({ data }: { data: IData }) {
 
   return (
     <UserLoginDiv>
-      <Avatar src={`src/assets/${image}`} alt='user' />
+      <Avatar src={`/assets/${image}`} alt='user' />
       <Name>{name}</Name>
     </UserLoginDiv>
   );
