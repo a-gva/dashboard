@@ -8,6 +8,6 @@ const CenterAreaDiv = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   borderRight: '2px solid #EBEEF3',
-  minWidth: '948px',
+  width: '946px',
   background: '$alexy',
 });

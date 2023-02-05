@@ -25,7 +25,7 @@ const LeftBarArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   borderRight: '2px solid #EBEEF3',
-  minWidth: '212px',
+  width: '210px',
   padding: '24px 24px 0 24px',
   // color: 'white',
 });

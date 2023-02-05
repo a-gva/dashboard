@@ -10,9 +10,11 @@ const { notifications, activities, contacts } = rightBar;
 export default function RightBar() {
   return (
     <RightBarArea>
-      <Notifications data={notifications} />
-      <Activities data={activities} />
-      <Contacts data={contacts} />
+      <RightBarDiv>
+        <Notifications data={notifications} />
+        <Activities data={activities} />
+        <Contacts data={contacts} />
+      </RightBarDiv>
     </RightBarArea>
   );
 }
@@ -20,6 +22,15 @@ export default function RightBar() {
 const RightBarArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  //   border: '3px solid orange',
-  minWidth: '280px',
+  justifyItems: 'center',
+  alignItems: 'center',
+  // border: '3px solid orange',
+  width: '280px',
+  // display: 'none',
+});
+
+const RightBarDiv = styled('div', {
+  width: '240px',
+  marginTop: '22px',
+  // border: '3px solid orange',
 });
