@@ -7,15 +7,11 @@ export default function FavoritesRecently({ data }) {
   return (
     <FavoritesRecentlyDiv>
       <LabelDiv>
-        {label.map((label: string) => {
-          return (
-            <>
-              <LabelItem key={label}>{label}</LabelItem>
-            </>
-          );
+        {label.map((label) => {
+          return <LabelItem key={label}>{label}</LabelItem>;
         })}
       </LabelDiv>
-      {items.map((item: string) => {
+      {items.map((item) => {
         return (
           <ItemDiv key={item}>
             <LabelDot src={dot} />

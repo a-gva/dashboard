@@ -6,9 +6,9 @@ export default function Notifications({ data }) {
     <NotificationsDiv>
       <Label>{label}</Label>
       <NotificationArea>
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
-            <Notification key={item.message}>
+            <Notification key={index}>
               <ImageDiv>
                 <ImageBg>
                   <Image src={`src/assets/icons/${item.image}`} alt='' />
@@ -32,7 +32,6 @@ const NotificationsDiv = styled('div', {
   display: ' flex',
   flexDirection: 'column',
   width: '240px',
-  fontSize: '14px',
   // border: '1px solid black',
   // color: 'white',
 });

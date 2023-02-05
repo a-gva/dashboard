@@ -20,4 +20,5 @@ const Dashboard = styled('div', {
   maxWidth: '1440px',
   height: '1024px',
   borderRadius: '16px',
+  fontSize: '14px',
 });
