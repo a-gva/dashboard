@@ -3,7 +3,12 @@ import arrow from '../../assets/icons/arrowLineRight.svg';
 
 interface IData {
   label: string;
-  items: [name: string, image: string];
+  items: [
+    {
+      name: string;
+      image: string;
+    }
+  ];
 }
 
 export default function Dashboards({ data }: { data: IData }) {

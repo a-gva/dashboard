@@ -3,13 +3,11 @@ import lineVertical from '../../assets/icons/lineVertical.svg';
 
 interface IData {
   label: string;
-  items: [
-    {
-      message: string;
-      time: string;
-      image: string;
-    }
-  ];
+  items: {
+    message: string;
+    time: string;
+    image: string;
+  }[];
 }
 
 export default function Activities({ data }: { data: IData }) {

@@ -2,14 +2,12 @@ import { styled } from '@stitches/react';
 
 interface IData {
   label: string;
-  items: [
-    {
-      message: string;
-      time: string;
-      image: string;
-      backgroundColor: string;
-    }
-  ];
+  items: {
+    message: string;
+    time: string;
+    image: string;
+    backgroundColor: string;
+  }[];
 }
 
 export default function Notifications({ data }: { data: IData }) {

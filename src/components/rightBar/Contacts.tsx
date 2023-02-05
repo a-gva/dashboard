@@ -2,7 +2,7 @@ import { styled } from '@stitches/react';
 
 interface IData {
   label: string;
-  user: [{ image: string; name: string }];
+  user: { image: string; name: string }[];
 }
 
 export default function Contacts({ data }: { data: IData }) {
