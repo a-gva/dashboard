@@ -5,8 +5,8 @@ export default function Footer({ data }) {
 
   return (
     <FooterDiv>
-      <LogoImage src={`src/assets/${logoImage}`} alt={logoImage} />
-      <LogoText src={`src/assets/${logoText}`} alt={logoText} />
+      <LogoImage src={`src/assets/brand/${logoImage}`} alt={logoImage} />
+      <LogoText src={`src/assets/brand/${logoText}`} alt={logoText} />
     </FooterDiv>
   );
 }

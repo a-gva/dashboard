@@ -1,7 +1,7 @@
 export const leftBar = {
   userLogin: {
     name: 'ByeWind',
-    image: 'byeWind.png',
+    image: 'byeWind.svg',
   },
   favoritesRecently: {
     label: [' Favorites', 'Recently'],

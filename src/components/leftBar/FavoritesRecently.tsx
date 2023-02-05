@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import dot from '../../assets/dot.svg';
+import dot from '../../assets/icons/dot.svg';
 
 export default function FavoritesRecently({ data }) {
   const { items, label } = data;

@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import arrow from '../../assets/arrowLineRight.svg';
+import arrow from '../../assets/icons/arrowLineRight.svg';
 
 export default function Pages({ data }) {
   const { items, label } = data;
@@ -15,7 +15,10 @@ export default function Pages({ data }) {
             <ItemDiv>
               <LabelArrow src={arrow} />
 
-              <ItemIcon src={`src/assets/${item.image}`} alt={item.image} />
+              <ItemIcon
+                src={`src/assets/icons/${item.image}`}
+                alt={item.image}
+              />
               <ItemName>{item.name}</ItemName>
             </ItemDiv>
             {item.subItems &&
