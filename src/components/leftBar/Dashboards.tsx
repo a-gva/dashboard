@@ -1,7 +1,12 @@
 import { styled } from '@stitches/react';
 import arrow from '../../assets/icons/arrowLineRight.svg';
 
-export default function Dashboards({ data }) {
+interface IData {
+  items: Array<string>;
+  label: string;
+}
+
+export default function Dashboards({ data }: { data: IData }) {
   const { items, label } = data;
 
   return (

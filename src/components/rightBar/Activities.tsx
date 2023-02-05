@@ -1,7 +1,12 @@
 import { styled } from '@stitches/react';
 import lineVertical from '../../assets/icons/lineVertical.svg';
 
-export default function Activities({ data }) {
+interface IData {
+  label: string;
+  items: Array<object>;
+}
+
+export default function Activities({ data }: { data: IData }) {
   const { label, items } = data;
 
   return (

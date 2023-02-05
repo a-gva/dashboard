@@ -1,7 +1,12 @@
 import { styled } from '@stitches/react';
 import dot from '../../assets/icons/dot.svg';
 
-export default function FavoritesRecently({ data }) {
+interface IData {
+  items: Array<string>;
+  label: Array<string>;
+}
+
+export default function FavoritesRecently({ data }: { data: IData }) {
   const { items, label } = data;
 
   return (

@@ -1,6 +1,11 @@
 import { styled } from '@stitches/react';
 
-export default function UserLogin({ data }) {
+interface IData {
+  name: string;
+  image: string;
+}
+
+export default function UserLogin({ data }: { data: IData }) {
   const { name, image } = data;
 
   return (

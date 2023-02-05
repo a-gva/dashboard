@@ -1,7 +1,12 @@
 import { styled } from '@stitches/react';
 import arrow from '../../assets/icons/arrowLineRight.svg';
 
-export default function Pages({ data }) {
+interface IData {
+  items: Array<object>;
+  label: string;
+}
+
+export default function Pages({ data }: { data: IData }) {
   const { items, label } = data;
 
   return (

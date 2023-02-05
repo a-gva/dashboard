@@ -1,6 +1,11 @@
 import { styled } from '@stitches/react';
 
-export default function Footer({ data }) {
+interface IData {
+  logoImage: string;
+  logoText: string;
+}
+
+export default function Footer({ data }: { data: IData }) {
   const { logoImage, logoText } = data;
 
   return (
