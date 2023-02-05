@@ -1,7 +1,17 @@
 import { styled } from '@stitches/react';
 
-export default function Notifications({ data }) {
+interface IData {
+  label: string;
+  items: {
+    image: string;
+    message: string;
+    time: string;
+  };
+}
+
+export default function Notifications({ data }: { data: IData }) {
   const { label, items } = data;
+
   return (
     <NotificationsDiv>
       <Label>{label}</Label>

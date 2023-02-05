@@ -1,6 +1,15 @@
 import { styled } from '@stitches/react';
 
-export default function Contacts({ data }) {
+interface IData {
+  label: string;
+  user: {
+    image: string;
+    message: string;
+    time: string;
+  };
+}
+
+export default function Contacts({ data }: { data: IData }) {
   const { label, user } = data;
 
   return (
