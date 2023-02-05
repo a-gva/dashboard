@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prod": "tsc && vite build --mode prod"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
