@@ -24,7 +24,7 @@ export default function NavBar() {
 const LeftBarArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  borderRight: '2px solid #EBEEF3',
+  borderRight: '1px solid #EBEEF3',
   width: '210px',
   padding: '24px 24px 0 24px',
   // color: 'white',
