@@ -1,5 +1,7 @@
 import { styled } from '@stitches/react';
 
+import SearchBar from '../../elements/SearchBar';
+
 interface IData {
   leftIcons: string[];
   selected: { menu: string; item: string };
@@ -26,6 +28,8 @@ export default function InfoBar({ data }: { data: IData }) {
         </LeftContent>
 
         <RightIconDiv>
+          <SearchBar />
+
           {rightIcons.map((icon) => (
             <Icon key={icon} src={`/assets/icons/${icon}`} alt={icon} />
           ))}

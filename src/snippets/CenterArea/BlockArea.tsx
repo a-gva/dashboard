@@ -1,5 +1,9 @@
 import { styled } from '@stitches/react';
 
+import SearchBar from '../../elements/SearchBar';
+
+import threeDots from '/assets/icons/threeDots.svg';
+
 interface IData {
   outterText: string;
   label: string;
@@ -24,7 +28,10 @@ export default function BlockArea({ data }: { data: IData }) {
           <MainWorkableArea>
             <TopArea>
               <Label>{label}</Label>
-              <Actions>Actions</Actions>
+              <ActionsDiv>
+                <SearchBar />
+                <Actions src={threeDots} alt={threeDots} />
+              </ActionsDiv>
             </TopArea>
             <BottomArea>
               <Table>
@@ -119,7 +126,14 @@ const TopArea = styled('div', {
   flexDirection: 'row',
 });
 const Label = styled('div', { fontWeight: 'bold' });
-const Actions = styled('div', {
+const ActionsDiv = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'row',
+  marginLeft: 'auto',
+  gap: '24px',
+});
+const Actions = styled('img', {
   display: 'flex',
   flexDirection: 'row',
   marginLeft: 'auto',
