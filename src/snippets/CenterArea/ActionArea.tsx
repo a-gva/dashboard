@@ -100,7 +100,6 @@ const WorkableArea = styled('div', {
   flexDirection: 'column',
   width: '100%',
   margin: '0px 30px 30px 30px',
-
   //   border: '2px solid blue',
 });
 

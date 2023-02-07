@@ -43,6 +43,7 @@ export const centerArea = {
   blockArea: {
     outterText: 'Block',
     label: 'Project Spendings',
+    tableHeadings: ['Manager', 'Date', 'Amount', 'Status'],
     list: [
       {
         manager: 'Koray Okumus',
@@ -62,7 +63,7 @@ export const centerArea = {
         manager: 'Olivia Rhye',
         date: 'Nov 10, 2022',
         amount: '$409.00',
-        status: 'Competed',
+        status: 'Completed',
         image: 'OliviaRhye.svg',
       },
       {
