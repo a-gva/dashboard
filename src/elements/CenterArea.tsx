@@ -5,16 +5,14 @@ import ActionArea from '../components/CenterArea/ActionArea';
 import BlockArea from '../components/CenterArea/BlockArea';
 
 import { centerArea } from '../data/centerArea';
-const { infoBar } = centerArea;
-
-console.log(infoBar);
+const { infoBar, actionArea } = centerArea;
 
 export default function CenterArea() {
   return (
     <CenterAreaDiv>
       <WorkableArea>
         <InfoBar data={infoBar} />
-        <ActionArea />
+        <ActionArea data={actionArea} />
         <BlockArea />
       </WorkableArea>
     </CenterAreaDiv>

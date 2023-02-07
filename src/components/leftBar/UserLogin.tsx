@@ -18,6 +18,7 @@ export default function UserLogin({ data }: { data: IData }) {
 
 const UserLoginDiv = styled('div', {
   display: 'flex',
+  alignItems: 'center',
   flexDirection: 'Row',
   gap: '10px',
   paddingBottom: '6px',

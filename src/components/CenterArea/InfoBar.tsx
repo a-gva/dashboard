@@ -8,7 +8,6 @@ interface IData {
 
 export default function InfoBar({ data }: { data: IData }) {
   const { leftIcons, selected, rightIcons } = data;
-  console.log(leftIcons, selected, rightIcons);
 
   return (
     <InfoBarDiv>
@@ -20,9 +19,9 @@ export default function InfoBar({ data }: { data: IData }) {
             ))}
           </LeftIconDiv>
           <SelectedDiv>
-            <MenuText>Menu</MenuText>
+            <MenuText>{selected.menu}</MenuText>
             <Separator>/</Separator>
-            <ItemText>Item</ItemText>
+            <ItemText>{selected.item}</ItemText>
           </SelectedDiv>
         </LeftContent>
 
