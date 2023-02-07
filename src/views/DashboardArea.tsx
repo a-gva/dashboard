@@ -22,7 +22,7 @@ const Dashboard = styled('div', {
   flexDirection: 'column',
   width: '100%',
   '@md': {
-    maxWidth: '90%',
+    maxWidth: '946px',
     // maxHeight: '1024px',
   },
   '@xxl': {

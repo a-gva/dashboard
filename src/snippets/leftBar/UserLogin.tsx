@@ -21,7 +21,7 @@ const UserLoginDiv = styled('div', {
   alignItems: 'center',
   flexDirection: 'Row',
   gap: '10px',
-  paddingBottom: '12px',
+  paddingBottom: '20px',
   '@xxl': {
     gap: '10px',
     paddingBottom: '6px',

@@ -40,10 +40,14 @@ const PagesDiv = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   fontSize: '14px',
+  width: '100%',
   // border: ' red 3px solid',
+  paddingBottom: '20px',
+  borderBottom: '1px solid #EBEEF3',
+
   '@xxl': {
     flexDirection: 'column',
-
+    borderBottom: 'none',
     padding: '0 0 6px 0',
   },
 });

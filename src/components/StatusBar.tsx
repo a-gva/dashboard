@@ -21,21 +21,38 @@ export default function StatusBar() {
 
 const RightBarArea = styled('div', {
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
   justifyItems: 'center',
   alignItems: 'center',
-  width: '280px',
+  // border: '3px solid orange',
   // display: 'none',
   '@xxl': {
-    border: '3px solid orange',
-    flexDirection: 'row',
-    maxWidth: '1440px',
-    maxHeight: '1024px',
+    width: '280px',
+    // border: '3px solid orange',
+    // flexDirection: 'column',
+    // maxWidth: '1440px',
+    // maxHeight: '1024px',
   },
 });
 
 const RightBarDiv = styled('div', {
-  width: '240px',
-  marginTop: '22px',
-  // border: '3px solid orange',
+  display: 'flex',
+  width: '100%',
+  flexDirection: 'row',
+  margin: '0 36px',
+  gap: '100px',
+
+  // border: '3px solid black',
+  '@xxl': {
+    // margin: '22px 20px 20px 20px',
+    margin: '20px',
+
+    // marginTop: '22px',
+    // width: '240px',
+    gap: '0',
+
+    flexDirection: 'column',
+    // maxWidth: '1440px',
+    // maxHeight: '1024px',
+  },
 });
