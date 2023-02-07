@@ -9,13 +9,13 @@ export const centerArea = {
   },
   actionArea: {
     menuItems: [
-      ' Overview',
-      ' Targets',
-      ' Budget',
-      ' Users',
-      ' Files',
-      ' Activity',
-      ' Settings',
+      { name: 'Overview', isActive: true },
+      { name: 'Targets', isActive: false },
+      { name: 'Budget', isActive: false },
+      { name: 'Users', isActive: false },
+      { name: 'Files', isActive: false },
+      { name: 'Activity', isActive: false },
+      { name: 'Settings', isActive: false },
     ],
     actions: ['+ Add User', 'Add Target'],
     headerText: 'Coffee detail page',
@@ -39,5 +39,9 @@ export const centerArea = {
     },
     logo: 'marvel.svg',
     avatarGroup: 'avatarGroup.svg',
+  },
+  blockArea: {
+    outterText: 'Block',
+    label: 'Project Spendings',
   },
 };

@@ -1,7 +1,7 @@
 import { styled } from '@stitches/react';
-import NavBar from '../elements/NavBar';
-import CenterArea from '../elements/CenterArea';
-import StatusBar from '../elements/StatusBar';
+import NavBar from '../components/NavBar';
+import CenterArea from '../components/CenterArea';
+import StatusBar from '../components/StatusBar';
 
 export default function DashboardArea() {
   return (

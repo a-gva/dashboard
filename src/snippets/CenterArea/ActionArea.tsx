@@ -1,7 +1,10 @@
 import { styled } from '@stitches/react';
 
 interface IData {
-  menuItems: string[];
+  menuItems: {
+    name: string;
+    isActive: boolean;
+  }[];
   actions: string[];
   headerText: string;
   specs: {
@@ -34,12 +37,20 @@ export default function ActionArea({ data }: { data: IData }) {
       <WorkableArea>
         <MenuDiv>
           <MenuItems>
-            {menuItems.map((item) => (
-              <Tab key={item}>{item}</Tab>
-            ))}
+            {menuItems.map((item) =>
+              item.isActive ? (
+                <Tab type='active' key={item.name}>
+                  {item.name}
+                </Tab>
+              ) : (
+                <Tab key={item.name}>{item.name}</Tab>
+              )
+            )}
           </MenuItems>
           <Actions>
-            <Tab>{actions}</Tab>
+            {actions.map((item) => (
+              <Tab key={item}>{item}</Tab>
+            ))}
           </Actions>
         </MenuDiv>
         <InfoArea>
@@ -87,12 +98,9 @@ const ActionAreaDiv = styled('div', {
 const WorkableArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  //   alignItems: 'center',
   width: '100%',
   margin: '0px 30px 30px 30px',
-  //   padding: '26px 5px',
-  //   margin: '0px 30px',
-  //   padding: '26px 5px',
+
   //   border: '2px solid blue',
 });
 
@@ -118,10 +126,21 @@ const Actions = styled('div', {
   marginLeft: 'auto',
   gap: '24px',
   //   width: '100%',
-  border: '2px solid red',
+  //   border: '2px solid red',
 });
 
-const Tab = styled('p', {});
+const Tab = styled('p', {
+  paddingBottom: '4px',
+  variants: {
+    type: {
+      active: {
+        color: '#1c1c1c',
+        fontWeight: 'bold',
+        borderBottom: '2px solid #1c1c1c',
+      },
+    },
+  },
+});
 
 const InfoArea = styled('div', {
   display: 'flex',

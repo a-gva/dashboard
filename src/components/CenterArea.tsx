@@ -1,8 +1,8 @@
 import { styled } from '@stitches/react';
 
-import InfoBar from '../components/CenterArea/InfoBar';
-import ActionArea from '../components/CenterArea/ActionArea';
-import BlockArea from '../components/CenterArea/BlockArea';
+import InfoBar from '../snippets/CenterArea/InfoBar';
+import ActionArea from '../snippets/CenterArea/ActionArea';
+import BlockArea from '../snippets/CenterArea/BlockArea';
 
 import { centerArea } from '../data/centerArea';
 const { infoBar, actionArea } = centerArea;
@@ -13,7 +13,7 @@ export default function CenterArea() {
       <WorkableArea>
         <InfoBar data={infoBar} />
         <ActionArea data={actionArea} />
-        <BlockArea />
+        <BlockArea data={blockArea} />
       </WorkableArea>
     </CenterAreaDiv>
   );

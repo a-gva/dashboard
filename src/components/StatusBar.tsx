@@ -1,8 +1,8 @@
 import { styled } from '@stitches/react';
 
-import Activities from '../components/rightBar/Activities';
-import Contacts from '../components/rightBar/Contacts';
-import Notifications from '../components/rightBar/Notifications';
+import Activities from '../snippets/rightBar/Activities';
+import Contacts from '../snippets/rightBar/Contacts';
+import Notifications from '../snippets/rightBar/Notifications';
 
 import { statusBar } from '../data/statusBar';
 const { notifications, activities, contacts } = statusBar;
