@@ -5,7 +5,7 @@ import ActionArea from '../snippets/CenterArea/ActionArea';
 import BlockArea from '../snippets/CenterArea/BlockArea';
 
 import { centerArea } from '../data/centerArea';
-const { infoBar, actionArea } = centerArea;
+const { infoBar, actionArea, blockArea } = centerArea;
 
 export default function CenterArea() {
   return (

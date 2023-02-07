@@ -43,5 +43,42 @@ export const centerArea = {
   blockArea: {
     outterText: 'Block',
     label: 'Project Spendings',
+    list: [
+      {
+        manager: 'Koray Okumus',
+        date: 'Jun 24, 2022',
+        amount: '$942.00',
+        status: 'In Progress',
+        image: 'KorayOkumus.svg',
+      },
+      {
+        manager: 'Natali Craig',
+        date: 'Mar 10, 2022',
+        amount: '$881.00',
+        status: 'Rejected',
+        image: 'NataliCraig.svg',
+      },
+      {
+        manager: 'Olivia Rhye',
+        date: 'Nov 10, 2022',
+        amount: '$409.00',
+        status: 'Competed',
+        image: 'OliviaRhye.svg',
+      },
+      {
+        manager: 'Orlando Diggs',
+        date: 'Dec 20, 2022',
+        amount: '$953.00',
+        status: 'Approved',
+        image: 'OrlandoDiggs.svg',
+      },
+      {
+        manager: 'Katherine Moss',
+        date: 'Jul 25, 2022',
+        amount: '$907.00',
+        status: 'Pending',
+        image: 'KatherineMoss.svg',
+      },
+    ],
   },
 };

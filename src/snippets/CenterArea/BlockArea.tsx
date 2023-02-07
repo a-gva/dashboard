@@ -1,6 +1,18 @@
 import { styled } from '@stitches/react';
 
-export default function BlockArea() {
+interface IData {
+  outterText: string;
+  label: string;
+  list: {
+    manager: string;
+    date: string;
+    amount: string;
+    status: string;
+    image: string;
+  }[];
+}
+
+export default function BlockArea({ data }: { data: IData }) {
   return <BlockAreaDiv>BlockArea</BlockAreaDiv>;
 }
 
