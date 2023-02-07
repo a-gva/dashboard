@@ -19,14 +19,17 @@ export const centerArea = {
     ],
     actions: ['+ Add User', 'Add Target'],
     headerText: 'Coffee detail page',
+    status: {
+      label: 'Status',
+      value: 51,
+    },
     specs: {
-      status: {
-        label: 'Status',
-        value: 'In Progress / 51%',
-      },
       totalTasks: {
         label: 'Total Tasks',
-        value: '15 / 48',
+        value: {
+          current: 15,
+          total: 48,
+        },
       },
       dueDate: {
         label: 'Due Date',

@@ -1,5 +1,9 @@
 import { styled } from '@stitches/react';
 
+import Separator from '../../elements/Separator';
+
+import ProgressBar from '../../elements/ProgressBar';
+
 interface IData {
   menuItems: {
     name: string;
@@ -7,14 +11,17 @@ interface IData {
   }[];
   actions: string[];
   headerText: string;
+  status: {
+    label: string;
+    value: number;
+  };
   specs: {
-    status: {
-      label: string;
-      value: string;
-    };
     totalTasks: {
       label: string;
-      value: string;
+      value: {
+        current: number;
+        total: number;
+      };
     };
     dueDate: {
       label: string;
@@ -30,7 +37,8 @@ interface IData {
 }
 
 export default function ActionArea({ data }: { data: IData }) {
-  const { menuItems, actions, headerText, specs, logo, avatarGroup } = data;
+  const { menuItems, actions, headerText, status, specs, logo, avatarGroup } =
+    data;
 
   return (
     <ActionAreaDiv>
@@ -61,12 +69,38 @@ export default function ActionArea({ data }: { data: IData }) {
               </Header>
               <Content>
                 <InfoDiv>
-                  {Object.keys(specs).map((key) => (
-                    <Info key={key}>
-                      <InfoLabel>{specs[key].label}:</InfoLabel>
-                      <InfoText>{specs[key].value}</InfoText>
-                    </Info>
-                  ))}
+                  <Info>
+                    <InfoLabel>{status.label}:</InfoLabel>
+                    {status.value < 100 && (
+                      // <ProgressBarDiv>
+                      <ProgressBar />
+                      // <InfoText>
+                      // </InfoText>
+                      // </ProgressBarDiv>
+                    )}
+                  </Info>
+                  {Object.keys(specs).map((key) => {
+                    if (typeof specs[key].value === 'object') {
+                      return (
+                        <Info key={key}>
+                          <InfoLabel>{specs[key].label}:</InfoLabel>
+                          <InfoText>
+                            {specs[key].value.current}
+                            <Separator />
+                            {specs[key].value.total}
+                          </InfoText>
+                        </Info>
+                      );
+                    } else {
+                      return (
+                        <Info key={key}>
+                          <InfoLabel>{specs[key].label}:</InfoLabel>
+                          <InfoText>{specs[key].value}</InfoText>
+                        </Info>
+                      );
+                    }
+                  })}
+                  {/* check if specs.value is an object */}
                 </InfoDiv>
               </Content>
             </Block1>
@@ -89,7 +123,7 @@ export default function ActionArea({ data }: { data: IData }) {
 
 const ActionAreaDiv = styled('div', {
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
   //   background: '#7d5bb6',
   marginTop: '32px',
   //   border: '2px solid green',
@@ -98,7 +132,7 @@ const ActionAreaDiv = styled('div', {
 const WorkableArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
+  maxWidth: '100%',
   margin: '0px 30px 30px 30px',
   //   border: '2px solid blue',
 });
@@ -148,7 +182,7 @@ const InfoArea = styled('div', {
   borderRadius: '16px',
   background: '#F7F9FB',
   //   padding: '24px',
-  //   border: '2px solid green',
+  // border: '2px solid green',
 });
 
 const InfoWorkableArea = styled('div', {
@@ -157,7 +191,7 @@ const InfoWorkableArea = styled('div', {
   margin: '24px',
   width: '100%',
   //   padding: '24px 24px',
-  //   border: '2px solid green',
+  // border: '2px solid green',
 });
 
 const Block1 = styled('div', {
@@ -165,7 +199,7 @@ const Block1 = styled('div', {
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'space-between',
-  //   background: 'yellow',
+  // background: 'yellow',
 });
 
 const Header = styled('div', {
@@ -187,20 +221,24 @@ const InfoDiv = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifySelf: 'start',
+  // justifyItems: 'start',
+  // justifySelf: 'start',
   width: '650px',
   height: '52px',
-  //   border: '2px solid orange',
+  // border: '2px solid orange',
 });
 
 const Info = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
   padding: '0 28px',
   borderRight: '1px solid #E5E5E5',
-  gap: '4px',
+  gap: '8px',
   height: '100%',
-  //   border: '2px solid purple',
+  // border: '2px solid purple',
+
   '&:first-child': {
     // borderLeft: '10px solid #E5E5E5',
     padding: '0 28px 0 0',
@@ -217,7 +255,9 @@ const InfoLabel = styled('p', {
   color: '#1C1C1C',
   fontSize: '14px',
   fontWeight: '400',
-  //   border: '2px solid purple',
+  whiteSpace: 'nowrap',
+
+  // border: '2px solid purple',
 
   //   display: 'none',
 });
@@ -227,6 +267,10 @@ const InfoText = styled('p', {
   flexDirection: 'row',
   fontSize: '18px',
   fontWeight: '600',
+  whiteSpace: 'nowrap',
+
+  // border: '2px solid orange',
+
   //   display: 'none',
 });
 

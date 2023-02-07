@@ -25,6 +25,7 @@ const FooterDiv = styled('div', {
   height: '76px',
   width: '100%',
   marginTop: 'auto',
+  gap: '8px',
   // border: '1px solid red',
   // position at the bottom
   // flexBasis: 'auto',
