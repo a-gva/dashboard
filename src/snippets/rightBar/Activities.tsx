@@ -1,4 +1,5 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
+
 import lineVertical from '/assets/icons/lineVertical.svg';
 
 interface IData {

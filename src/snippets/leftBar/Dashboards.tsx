@@ -1,4 +1,5 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
+
 import arrow from '/assets/icons/arrowLineRight.svg';
 
 interface IData {
@@ -31,16 +32,26 @@ export default function Dashboards({ data }: { data: IData }) {
 }
 
 const DashboardsDiv = styled('div', {
-  paddingBottom: '6px',
+  display: 'flex',
+  flexDirection: 'row',
   fontSize: '14px',
+  // border: ' blue 3px solid',
+  '@xxl': {
+    flexDirection: 'column',
+    paddingBottom: '6px',
+  },
 });
 
 const LabelDiv = styled('div', {
   display: 'flex',
+  alignItems: 'center',
   flexDirection: 'row',
   color: '#A0A3BD',
+
   gap: '20px',
-  padding: '24px 0 6px 0',
+  '@xxl': {
+    padding: '24px 0 6px 0',
+  },
 });
 
 const LabelArrow = styled('img', {});

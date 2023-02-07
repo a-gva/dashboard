@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../theme/stitches.config';
 
 import UserLoginDiv from '../snippets/leftBar/UserLogin';
 import FavoritesRecently from '../snippets/leftBar/FavoritesRecently';
@@ -24,8 +24,18 @@ export default function NavBar() {
 const LeftBarArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'start',
   borderRight: '1px solid #EBEEF3',
-  width: '210px',
-  padding: '24px 24px 0 24px',
-  // color: 'white',
+  // border: 'green 5px solid',
+  padding: '24px',
+  // height: '200px',
+  justifyContent: 'space-between',
+
+  '@xxl': {
+    padding: '24px 24px 0 24px',
+    alignItems: 'none',
+    flexDirection: 'column',
+    width: '210px',
+    // border: 'red 5px solid',
+  },
 });

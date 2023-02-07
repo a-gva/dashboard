@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
 
 interface IData {
   label: string;

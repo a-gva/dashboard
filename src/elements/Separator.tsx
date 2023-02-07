@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '@stitches/react';
+import { styled } from '../theme/stitches.config';
 
 export default function Separator() {
   return <SeparatorComponent>/</SeparatorComponent>;

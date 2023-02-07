@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../theme/stitches.config';
 
 import InfoBar from '../snippets/CenterArea/InfoBar';
 import ActionArea from '../snippets/CenterArea/ActionArea';

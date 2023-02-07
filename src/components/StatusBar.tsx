@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../theme/stitches.config';
 
 import Activities from '../snippets/rightBar/Activities';
 import Contacts from '../snippets/rightBar/Contacts';
@@ -24,9 +24,14 @@ const RightBarArea = styled('div', {
   flexDirection: 'column',
   justifyItems: 'center',
   alignItems: 'center',
-  // border: '3px solid orange',
   width: '280px',
   // display: 'none',
+  '@xxl': {
+    border: '3px solid orange',
+    flexDirection: 'row',
+    maxWidth: '1440px',
+    maxHeight: '1024px',
+  },
 });
 
 const RightBarDiv = styled('div', {

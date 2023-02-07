@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
 
 interface IData {
   logoImage: string;
@@ -17,15 +17,22 @@ export default function Footer({ data }: { data: IData }) {
 }
 
 const FooterDiv = styled('div', {
-  display: 'flex',
+  display: 'none',
   flexDirection: 'row',
   alignItems: 'center',
   textAlign: 'center',
   justifyContent: 'center',
-  height: '76px',
-  width: '100%',
-  marginTop: 'auto',
-  gap: '8px',
+  // border: ' blue 3px solid',
+
+  '@xxl': {
+    display: 'flex',
+
+    width: '100%',
+    height: '76px',
+    marginTop: 'auto',
+    gap: '8px',
+  },
+
   // border: '1px solid red',
   // position at the bottom
   // flexBasis: 'auto',

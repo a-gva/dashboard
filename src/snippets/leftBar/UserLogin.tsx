@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
 
 interface IData {
   name: string;
@@ -21,7 +21,11 @@ const UserLoginDiv = styled('div', {
   alignItems: 'center',
   flexDirection: 'Row',
   gap: '10px',
-  paddingBottom: '6px',
+  paddingBottom: '12px',
+  '@xxl': {
+    gap: '10px',
+    paddingBottom: '6px',
+  },
 });
 
 const Name = styled('p', {

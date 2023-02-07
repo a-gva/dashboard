@@ -1,4 +1,5 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
+
 import arrow from '/assets/icons/arrowLineRight.svg';
 
 interface IData {
@@ -19,7 +20,6 @@ export default function Pages({ data }: { data: IData }) {
           <div key={item.name}>
             <ItemDiv>
               <LabelArrow src={arrow} />
-
               <ItemIcon src={`/assets/icons/${item.image}`} alt={item.image} />
               <ItemName>{item.name}</ItemName>
             </ItemDiv>
@@ -37,16 +37,27 @@ export default function Pages({ data }: { data: IData }) {
 }
 
 const PagesDiv = styled('div', {
-  padding: '0 0 6px 0',
+  display: 'flex',
+  flexDirection: 'row',
   fontSize: '14px',
+  // border: ' red 3px solid',
+  '@xxl': {
+    flexDirection: 'column',
+
+    padding: '0 0 6px 0',
+  },
 });
 
 const LabelDiv = styled('div', {
   display: 'flex',
+  alignItems: 'center',
+
   flexDirection: 'row',
   color: '#A0A3BD',
   fontSize: '14px',
-  padding: '24px 0 6px 0',
+  '@xxl': {
+    padding: '24px 0 6px 0',
+  },
 });
 
 const LabelArrow = styled('img', {});
@@ -69,4 +80,8 @@ const ItemName = styled('p', {});
 const SubItemName = styled('p', {
   marginLeft: '50px',
   padding: '6px 0',
+  display: ' none',
+  '@xxl': {
+    display: 'block',
+  },
 });

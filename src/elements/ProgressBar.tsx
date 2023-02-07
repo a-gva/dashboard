@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../theme/stitches.config';
 
 const Back = styled('div', {
   width: '170px',

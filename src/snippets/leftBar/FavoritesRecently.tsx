@@ -1,4 +1,5 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../theme/stitches.config';
+
 import dot from '/assets/icons/dot.svg';
 
 interface IData {
@@ -29,8 +30,15 @@ export default function FavoritesRecently({ data }: { data: IData }) {
 }
 
 const FavoritesRecentlyDiv = styled('div', {
-  padding: '18px 0 6px 0',
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'row',
   fontSize: '14px',
+  // border: '1px solid orange',
+  '@xxl': {
+    flexDirection: 'column',
+    padding: '18px 0 6px 0',
+  },
 });
 
 const LabelDiv = styled('div', {
@@ -39,7 +47,9 @@ const LabelDiv = styled('div', {
   color: '#A0A3BD',
   fontSize: '14px',
   gap: '20px',
-  padding: '0 0 6px 0',
+  '@xxl': {
+    padding: '0 0 6px 0',
+  },
 });
 
 const LabelDot = styled('img', {});
