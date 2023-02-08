@@ -25,13 +25,14 @@ export default function Calculator() {
       setMainDisplay(number);
       setAuxiliaryDisplay(number);
     } else {
-      setMainDisplay(mainDisplay.toString() + number.toString());
-      setAuxiliaryDisplay(mainDisplay.toString() + number.toString());
+      setMainDisplay(parseInt(`${mainDisplay}${number}`));
+      setAuxiliaryDisplay(parseInt(`${mainDisplay}${number}`));
     }
   };
 
   const clearDisplay = () => {
     setMainDisplay(0);
+    setAuxiliaryDisplay(0);
   };
 
   const toggleTheme = () => {
