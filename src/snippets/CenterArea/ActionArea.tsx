@@ -57,7 +57,7 @@ export default function ActionArea({ data }: { data: IData }) {
           </MenuItems>
           <Actions>
             {actions.map((item) => (
-              <Tab key={item}>{item}</Tab>
+              <TabActions key={item}>{item}</TabActions>
             ))}
           </Actions>
         </MenuDiv>
@@ -158,12 +158,41 @@ const Actions = styled('div', {
   flexDirection: 'row',
   marginLeft: 'auto',
   gap: '24px',
+
   //   width: '100%',
-  //   border: '2px solid red',
+  // border: '2px solid red',
 });
 
 const Tab = styled('p', {
-  paddingBottom: '4px',
+  paddingBottom: '4px 12px 0 12px',
+  // border: '2px solid red',
+  '&:hover': {
+    background: '#cacaca6c',
+    color: '#000000',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
+  variants: {
+    type: {
+      active: {
+        color: '#1c1c1c',
+        fontWeight: 'bold',
+        borderBottom: '2px solid #1c1c1c',
+      },
+    },
+  },
+});
+
+const TabActions = styled('p', {
+  paddingBottom: '4px 12px 0 12px',
+  gap: '24px',
+  // border: '2px solid green',
+  '&:hover': {
+    background: '#cacaca6c',
+    color: '#000000',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
   variants: {
     type: {
       active: {

@@ -74,7 +74,13 @@ const LeftIconDiv = styled('div', {
   // border: '2px solid red',
 });
 
-const Icon = styled('img', {});
+const Icon = styled('img', {
+  '&:hover': {
+    background: '#cacaca6c',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
+});
 
 const SelectedDiv = styled('div', {
   display: 'flex',
@@ -96,8 +102,19 @@ const RightIconDiv = styled('div', {
   // border: '2px solid red',
 });
 
-const MenuText = styled('p', {});
+const MenuText = styled('p', {
+  '&:hover': {
+    background: '#cacaca6c',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
+});
 const Separator = styled('p', {});
 const ItemText = styled('p', {
   color: 'rgba(0, 0, 0, 0.9)',
+  '&:hover': {
+    background: '#cacaca6c',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
 });

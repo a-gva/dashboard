@@ -103,7 +103,6 @@ const ItemDiv = styled('div', {
   // hover
   '&:hover': {
     background: '#cacaca6c',
-    // borderLeft: '8px solid #000000',
     borderRadius: '8px',
     cursor: 'pointer',
   },
@@ -115,10 +114,15 @@ const ItemIcon = styled('img', {
 const ItemName = styled('p', {});
 
 const SubItemName = styled('p', {
-  marginLeft: '50px',
-  padding: '6px 0',
+  // marginLeft: '50px',
+  padding: '6px 0 6px 50px',
   display: ' none',
   '@xxl': {
     display: 'block',
+  },
+  '&:hover': {
+    background: '#cacaca6c',
+    borderRadius: '8px',
+    cursor: 'pointer',
   },
 });

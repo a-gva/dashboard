@@ -36,6 +36,7 @@ const DashboardsDiv = styled('div', {
   flexDirection: 'row',
   fontSize: '14px',
   // border: ' blue 3px solid',
+  width: '100%',
   '@xxl': {
     flexDirection: 'column',
     paddingBottom: '6px',
@@ -66,6 +67,12 @@ const Item = styled('div', {
   alignItems: 'center',
   gap: '6px',
   padding: '6px 0',
+  // width: '100%',
+  '&:hover': {
+    background: '#cacaca6c',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
 });
 
 const Image = styled('img', {});

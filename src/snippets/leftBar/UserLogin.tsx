@@ -35,8 +35,18 @@ const Name = styled('p', {
   fontSize: '14px',
   lineHeight: '20px',
   color: '#1C1C1C',
+  '&:hover': {
+    background: '#e0e0e06c',
+    color: '#505050',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  },
 });
 
 const Avatar = styled('img', {
+  width: '40px',
   // background: 'blue',/
+  '&:hover': {
+    cursor: 'pointer',
+  },
 });
