@@ -1,5 +1,6 @@
 export const calculatorTheme = {
   dark: {
+    id: 'dark',
     background: '#18181C',
     numbers: {
       background: '#2E2E38',
@@ -19,8 +20,10 @@ export const calculatorTheme = {
       buttonBackground: '#4E505F',
       icon: '#4150C0',
     },
+    icon: 'moon.svg',
   },
   light: {
+    id: 'light',
     background: '#F1F2F3',
     numbers: {
       background: '#FFFFFF',
@@ -40,5 +43,6 @@ export const calculatorTheme = {
       buttonBackground: '#D2D3DA',
       icon: '#808EFD',
     },
+    icon: 'sun.svg',
   },
 };
