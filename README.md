@@ -1,6 +1,7 @@
-## React Dashboard
+## React Dashboard/Calculator
 
 [dashboard-a-gva.vercel.app](dashboard-a-gva.vercel.app) <br>
+[dashboard-a-gva.vercel.app/calculator](dashboard-a-gva.vercel.app/calculator) <br>
 
 A dynamic and user-friendly dashboard written in React, TypeScript and Vite.
 
