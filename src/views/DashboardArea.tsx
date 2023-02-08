@@ -5,13 +5,26 @@ import StatusBar from '../components/StatusBar';
 
 export default function DashboardArea() {
   return (
-    <Dashboard>
-      <NavBar />
-      <CenterArea />
-      <StatusBar />
-    </Dashboard>
+    <DashboardDiv>
+      <Dashboard>
+        <NavBar />
+        <CenterArea />
+        <StatusBar />
+      </Dashboard>
+    </DashboardDiv>
   );
 }
+
+const DashboardDiv = styled('div', {
+  display: 'flex',
+  // flexDirection: 'column',
+  // justifyContent: 'center',
+  // alignItems: '',
+  height: '100vh',
+  '@xxl': {
+    alignItems: 'center',
+  },
+});
 
 const Dashboard = styled('div', {
   display: 'flex',
@@ -30,6 +43,6 @@ const Dashboard = styled('div', {
     flexDirection: 'row',
     border: 'none',
     maxWidth: '1440px',
-    maxHeight: '1024px',
+    // maxHeight: '964px',
   },
 });

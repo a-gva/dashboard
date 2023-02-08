@@ -44,7 +44,6 @@ const NotificationsDiv = styled('div', {
   width: '100%',
   // border: '1px solid black',
   // color: 'white',
-
   '@lg': {
     width: '240px',
   },
@@ -57,7 +56,7 @@ const Label = styled('p', {
 });
 
 const NotificationArea = styled('div', {
-  padding: '18px 0',
+  padding: '18px 0 12px 0',
   // border: '1px solid black',
 });
 
