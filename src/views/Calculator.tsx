@@ -19,26 +19,44 @@ export default function Calculator() {
 
   const [currentTheme, setCurrentTheme] = useState('dark');
   const [theme, setTheme] = useState(darkTheme);
-  const [mainDisplay, setMainDisplay] = useState<number>(0);
-  const [auxiliaryDisplay, setAuxiliaryDisplay] = useState<number>(0);
+
+  const [calc, setCalc] = useState<string>('');
+  const [result, setResult] = useState<string>('');
+
+  const ops = ['+', '-', '*', '/', '.'];
+
+  const updateCalc = (value: string) => {
+    if (
+      (ops.includes(value) && calc === '') ||
+      (ops.includes(value) && ops.includes(calc.slice(-1)))
+    ) {
+      return;
+    }
+    setCalc(calc + value);
+
+    if (!ops.includes(value)) {
+      setResult(eval(calc + value).toString());
+    }
+  };
+
+  const calculate = () => {
+    setCalc(eval(calc).toString());
+  };
+
+  const deleteLast = () => {
+    if (calc === '') {
+      return;
+    }
+    const value = calc.slice(0, -1);
+    setCalc(value);
+  };
 
   console.log('Calculator Full Object: ', calculatorTheme);
   console.log('theme to render: ', theme);
   console.log('bg theme: ', theme.background);
 
-  const handleNumberClick = (number: number) => {
-    if (mainDisplay == 0) {
-      setMainDisplay(number);
-      setAuxiliaryDisplay(number);
-    } else {
-      setMainDisplay(parseInt(`${mainDisplay}${number}`));
-      setAuxiliaryDisplay(parseInt(`${mainDisplay}${number}`));
-    }
-  };
-
   const clearDisplay = () => {
-    setMainDisplay(0);
-    setAuxiliaryDisplay(0);
+    setCalc('');
   };
 
   const toggleTheme = () => {
@@ -58,15 +76,11 @@ export default function Calculator() {
   const CalculatorArea = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
     width: '375px',
     height: '812px',
-    // padding: '10px 20px',
     background: `${theme.background}`,
-
-    // background: '#fff',
     color: '#fff',
     fontFamily: 'Work Sans',
     borderRadius: '16px',
@@ -77,9 +91,9 @@ export default function Calculator() {
     display: 'flex',
     justifyContent: 'end',
     alignItems: 'center',
-    // border: '3px solid red',
     width: '100%',
     padding: '0px 20px',
+    // border: '3px solid red',
   });
 
   const DashBoardLink = styled(Link, {
@@ -87,8 +101,6 @@ export default function Calculator() {
     textDecoration: 'none',
     color: `${theme.numbers.secondaryColor}`,
     padding: '5px 20px',
-
-    // hover
     '&:hover': {
       opacity: 0.5,
     },
@@ -105,7 +117,6 @@ export default function Calculator() {
   const ThemeDiv = styled('div', {
     display: 'flex',
     justifyContent: 'center',
-    // background: '#2E2E38',
     width: '100%',
     height: '32px',
     marginBottom: '55px',
@@ -121,9 +132,7 @@ export default function Calculator() {
     borderRadius: '16px',
     gap: '16px',
     cursor: 'pointer',
-    // background: '#2E2E38',
     background: `${theme.themeButton.background}`,
-
     // border: '3px solid red',
   });
 
@@ -146,7 +155,6 @@ export default function Calculator() {
   const OperationsArea = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     alignItems: 'center',
     height: '599px',
     padding: '10px 20px',
@@ -162,11 +170,7 @@ export default function Calculator() {
   const AuxiliaryData = styled('p', {
     fontSize: '40px',
     fontWeight: '300',
-    // color: '#B3B3B3',
     color: `${theme.numbers.secondaryColor}`,
-
-    // display: 'flex',
-    // width: '100%',
     // border: '3px solid red',
   });
 
@@ -200,10 +204,7 @@ export default function Calculator() {
   const Row = styled('div', {
     display: 'flex',
     justifyContent: 'center',
-    // justifyContent: 'space-between',
-    // width: '100%',
     gap: '16px',
-    // height: '100%',
     // border: '3px solid blue',
   });
 
@@ -215,10 +216,9 @@ export default function Calculator() {
     width: '72px',
     height: '72px',
     cursor: 'pointer',
-    // color: '#000',
-    // border: '3px solid ',
     borderRadius: '16px',
-    // hover
+    // border: '3px solid ',
+
     '&:hover': {
       opacity: 0.5,
     },
@@ -226,16 +226,13 @@ export default function Calculator() {
     variants: {
       type: {
         number: {
-          // background: '#2E2E38',
           background: `${theme.numbers.background}`,
           color: `${theme.numbers.primaryColor}`,
         },
         operator: {
-          // background: '#4B5EFC',
           background: `${theme.operators.background}`,
         },
         specialOperator: {
-          // background: '#4E505F',
           background: `${theme.specialOperators.background}`,
           color: `${theme.specialOperators.color}`,
         },
@@ -274,10 +271,10 @@ export default function Calculator() {
         </ThemeDiv>
         <OperationsArea>
           <AuxiliaryDisplay>
-            <AuxiliaryData>{auxiliaryDisplay}</AuxiliaryData>
+            <AuxiliaryData> {result ? result : '0'}</AuxiliaryData>
           </AuxiliaryDisplay>
           <MainDisplay>
-            <MainData>{mainDisplay}</MainData>
+            <MainData>{calc || '0'}</MainData>
           </MainDisplay>
           <KeysArea>
             <Row>
@@ -290,57 +287,65 @@ export default function Calculator() {
               <Key type='specialOperator'>
                 <Percent fill={theme.specialOperators.color} />
               </Key>
-              <Key type='operator'>
+              <Key type='operator' onClick={() => updateCalc('/')}>
                 <Icon src={divide} />
               </Key>
             </Row>
             <Row>
-              <Key type='number' onClick={() => handleNumberClick(7)}>
+              <Key type='number' onClick={() => updateCalc('7')}>
                 7
               </Key>
-              <Key type='number' onClick={() => handleNumberClick(8)}>
+              <Key type='number' onClick={() => updateCalc('8')}>
                 8
               </Key>
-              <Key type='number' onClick={() => handleNumberClick(9)}>
+              <Key type='number' onClick={() => updateCalc('9')}>
                 9
               </Key>
-              <Key type='operator'>
+              <Key type='operator' onClick={() => updateCalc('*')}>
                 <Icon src={multiply} />
               </Key>
             </Row>
             <Row>
-              <Key type='number' onClick={() => handleNumberClick(4)}>
+              <Key type='number' onClick={() => updateCalc('4')}>
                 4
               </Key>
-              <Key type='number' onClick={() => handleNumberClick(5)}>
+              <Key type='number' onClick={() => updateCalc('5')}>
                 5
               </Key>
-              <Key type='number' onClick={() => handleNumberClick(6)}>
+              <Key type='number' onClick={() => updateCalc('6')}>
                 6
               </Key>
-              <Key type='operator'>
+              <Key type='operator' onClick={() => updateCalc('-')}>
                 <Icon src={subtraction} />
               </Key>
             </Row>
             <Row>
-              <Key type='number' onClick={() => handleNumberClick(1)}>
+              <Key type='number' onClick={() => updateCalc('1')}>
                 1
               </Key>
-              <Key type='number' onClick={() => handleNumberClick(2)}>
+              <Key type='number' onClick={() => updateCalc('2')}>
                 2
               </Key>
-              <Key type='number' onClick={() => handleNumberClick(3)}>
+              <Key type='number' onClick={() => updateCalc('3')}>
                 3
               </Key>
-              <Key type='operator'>+</Key>
+              <Key type='operator' onClick={() => updateCalc('+')}>
+                +
+              </Key>
             </Row>
             <Row>
-              <Key type='number'>.</Key>
-              <Key type='number'>0</Key>
-              <Key type='number'>
+              <Key type='number' onClick={() => updateCalc('.')}>
+                .
+              </Key>
+              <Key type='number' onClick={() => updateCalc('0')}>
+                0
+              </Key>
+              <Key type='number' onClick={deleteLast}>
                 <Delete fill={theme.specialOperators.color} />
               </Key>
-              <Key type='operator'>=</Key>
+              <Key type='operator' onClick={calculate}>
+                =
+              </Key>
             </Row>
           </KeysArea>
         </OperationsArea>
