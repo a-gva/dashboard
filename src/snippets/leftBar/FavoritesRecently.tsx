@@ -31,13 +31,12 @@ export default function FavoritesRecently({ data }: { data: IData }) {
 
 const FavoritesRecentlyDiv = styled('div', {
   display: 'flex',
-  // alignItems: 'center',
   alignItems: 'center',
-
+  flexWrap: 'wrap',
   flexDirection: 'row',
   fontSize: '14px',
   width: '100%',
-  // border: '1px solid orange',
+  // border: '2px solid orange',
   '@xxl': {
     flexDirection: 'column',
     alignItems: 'start',

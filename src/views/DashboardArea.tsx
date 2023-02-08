@@ -18,9 +18,10 @@ const Dashboard = styled('div', {
   background: '#fff',
   borderRadius: '16px',
   fontSize: '14px',
-  // border: '10px solid red',
   flexDirection: 'column',
   width: '100%',
+  // border: '10px solid red',
+
   '@md': {
     maxWidth: '946px',
     // maxHeight: '1024px',

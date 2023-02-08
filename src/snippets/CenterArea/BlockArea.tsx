@@ -35,44 +35,50 @@ export default function BlockArea({ data }: { data: IData }) {
             </TopArea>
             <BottomArea>
               <Table>
-                <TableRow>
-                  {tableHeadings.map((item) => (
-                    <TableHead key={item}>{item}</TableHead>
-                  ))}
-                </TableRow>
-                {list.map((item) => (
-                  <TableRow key={item.manager}>
-                    <TableData
-                      type='manager'
-                      // style={{ width: `${100 / tableHeadings.length}%` }}
-                    >
-                      <ImageIcon
-                        key={item.image}
-                        src={`/assets/users/named/${item.image}`}
-                        alt={item.image}
-                      />
-                      <ManagerName>{item.manager}</ManagerName>
-                    </TableData>
-                    <TableData type='date'>{item.date}</TableData>
-                    <TableData type='amount'>{item.amount}</TableData>
-
-                    {item.status === 'In Progress' && (
-                      <TableData status='inProgress'>• {item.status}</TableData>
-                    )}
-                    {item.status === 'Rejected' && (
-                      <TableData status='rejected'>• {item.status}</TableData>
-                    )}
-                    {item.status === 'Completed' && (
-                      <TableData status='completed'>• {item.status}</TableData>
-                    )}
-                    {item.status === 'Approved' && (
-                      <TableData status='approved'>• {item.status}</TableData>
-                    )}
-                    {item.status === 'Pending' && (
-                      <TableData status='pending'>• {item.status}</TableData>
-                    )}
+                <TableBody>
+                  <TableRow>
+                    {tableHeadings.map((item) => (
+                      <TableHead key={item}>{item}</TableHead>
+                    ))}
                   </TableRow>
-                ))}
+                  {list.map((item) => (
+                    <TableRow key={item.manager}>
+                      <TableData
+                        type='manager'
+                        // style={{ width: `${100 / tableHeadings.length}%` }}
+                      >
+                        <ImageIcon
+                          key={item.image}
+                          src={`/assets/users/named/${item.image}`}
+                          alt={item.image}
+                        />
+                        <ManagerName>{item.manager}</ManagerName>
+                      </TableData>
+                      <TableData type='date'>{item.date}</TableData>
+                      <TableData type='amount'>{item.amount}</TableData>
+
+                      {item.status === 'In Progress' && (
+                        <TableData status='inProgress'>
+                          • {item.status}
+                        </TableData>
+                      )}
+                      {item.status === 'Rejected' && (
+                        <TableData status='rejected'>• {item.status}</TableData>
+                      )}
+                      {item.status === 'Completed' && (
+                        <TableData status='completed'>
+                          • {item.status}
+                        </TableData>
+                      )}
+                      {item.status === 'Approved' && (
+                        <TableData status='approved'>• {item.status}</TableData>
+                      )}
+                      {item.status === 'Pending' && (
+                        <TableData status='pending'>• {item.status}</TableData>
+                      )}
+                    </TableRow>
+                  ))}
+                </TableBody>
               </Table>
             </BottomArea>
           </MainWorkableArea>
@@ -123,15 +129,34 @@ const MainWorkableArea = styled('div', {
 
 const TopArea = styled('div', {
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
+  flexWrap: 'wrap',
+  // border: '2px solid red',
+  gap: '8px',
+  '@md': {
+    gap: '0',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
 });
-const Label = styled('div', { fontWeight: 'bold' });
+
+const Label = styled('div', {
+  fontWeight: 'bold',
+  // border: '2px solid yellow',
+});
+
 const ActionsDiv = styled('div', {
   display: 'flex',
-  alignItems: 'center',
   flexDirection: 'row',
-  marginLeft: 'auto',
+  // alignItems: 'center',
+  // flexDirection: 'row',
   gap: '24px',
+  // border: '2px solid green',
+
+  '@md': {
+    flexDirection: 'row',
+    marginLeft: 'auto',
+  },
 });
 const Actions = styled('img', {
   display: 'flex',
@@ -151,9 +176,17 @@ const Table = styled('table', {
   // display: 'grid',
   width: '100%',
 });
+const TableBody = styled('tbody', {
+  // display: 'grid',
+  // width: '100%',
+});
 
 const TableRow = styled('tr', {
-  // border: '10px solid #E5E5E5',
+  fontSize: '12px',
+
+  '@sm': {
+    fontSize: '14px',
+  },
 });
 
 const TableHead = styled('th', {

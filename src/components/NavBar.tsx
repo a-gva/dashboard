@@ -25,18 +25,16 @@ const LeftBarArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'start',
-  width: '100%',
   borderRight: '1px solid #EBEEF3',
-  // border: 'green 5px solid',
   padding: '24px 24px 0px 24px',
-  // height: '200px',
   justifyContent: 'space-between',
+  // border: 'green 5px solid',
 
   '@xxl': {
     padding: '24px 24px 0 24px',
     alignItems: 'none',
     flexDirection: 'column',
     width: '210px',
-    // border: 'red 5px solid',
+    // border: 'solid 5px red',
   },
 });

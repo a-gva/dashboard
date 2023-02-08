@@ -124,43 +124,58 @@ export default function ActionArea({ data }: { data: IData }) {
 const ActionAreaDiv = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  //   background: '#7d5bb6',
   marginTop: '32px',
-  //   border: '2px solid green',
+  height: '100%',
+  // border: '2px solid green',
 });
 
 const WorkableArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: '100%',
   margin: '0px 30px 30px 30px',
-  //   border: '2px solid blue',
+  // border: '2px solid blue',
 });
 
 const MenuDiv = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   width: '100%',
+  flexWrap: 'wrap',
   marginBottom: '24px',
+  gap: '20px 20px',
+
   color: 'rgba(0, 0, 0, 0.4)',
-  //   border: '2px solid red',
+  // border: '2px solid red',
+
+  '@md': {
+    gap: 0,
+  },
 });
 
 const MenuItems = styled('div', {
   display: 'flex',
+  alignItems: 'center',
   flexDirection: 'row',
-  gap: '20px',
-  //   border: '2px solid red',
+  gap: '5px 20px',
+  flexWrap: 'wrap',
+  // border: '2px solid black',
+
+  '@md': {
+    gap: '20px',
+  },
 });
 
 const Actions = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  marginLeft: 'auto',
   gap: '24px',
 
+  '@md': {
+    marginLeft: 'auto',
+  },
+
   //   width: '100%',
-  // border: '2px solid red',
+  // border: '2px solid blue',
 });
 
 const Tab = styled('p', {
@@ -206,12 +221,18 @@ const TabActions = styled('p', {
 
 const InfoArea = styled('div', {
   display: 'flex',
-  height: '144px',
+  flexDirection: 'column',
   width: '100%',
+  flexWrap: 'wrap',
   borderRadius: '16px',
   background: '#F7F9FB',
   //   padding: '24px',
   // border: '2px solid green',
+  '@md': {
+    height: '144px',
+
+    flexDirection: 'row',
+  },
 });
 
 const InfoWorkableArea = styled('div', {
@@ -219,6 +240,8 @@ const InfoWorkableArea = styled('div', {
   flexDirection: 'row',
   margin: '24px',
   width: '100%',
+  flexWrap: 'wrap',
+
   //   padding: '24px 24px',
   // border: '2px solid green',
 });
@@ -228,33 +251,43 @@ const Block1 = styled('div', {
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'space-between',
+  // width: '100%',
+  flexWrap: 'wrap',
   // background: 'yellow',
+  // border: '2px solid red',
 });
 
 const Header = styled('div', {
-  width: '100%',
+  // width: '100%',
   fontSize: '18px',
   fontWeight: '600',
   marginBottom: '16px',
-  //   border: '2px solid red',
+  // border: '2px solid orange',
 });
 
 const Content = styled('div', {
   display: 'flex',
-  flexDirection: 'row',
-  width: '100%',
-  //   border: '2px solid red',
+  flexWrap: 'wrap',
+  // width: '100%',
+  '@md': {
+    flexDirection: 'row',
+  },
+  // border: '2px solid red',
 });
 
 const InfoDiv = styled('div', {
   display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
+  flexDirection: 'column',
+  width: '100%',
+  // border: '2px solid orange',
   // justifyItems: 'start',
   // justifySelf: 'start',
-  width: '650px',
-  height: '52px',
-  // border: '2px solid orange',
+  '@md': {
+    alignItems: 'center',
+    height: '52px',
+    flexDirection: 'row',
+    width: '650px',
+  },
 });
 
 const Info = styled('div', {
@@ -262,18 +295,27 @@ const Info = styled('div', {
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'center',
-  padding: '0 28px',
-  borderRight: '1px solid #E5E5E5',
-  gap: '8px',
   height: '100%',
   // border: '2px solid purple',
+  margin: '12px 0',
+  gap: '4px',
+
+  '@md': {
+    borderRight: '1px solid #E5E5E5',
+    padding: '0 28px',
+    gap: '8px',
+  },
 
   '&:first-child': {
     // borderLeft: '10px solid #E5E5E5',
-    padding: '0 28px 0 0',
+    '@md': {
+      padding: '0 28px 0 0',
+    },
   },
   '&:last-child': {
-    borderRight: 'none',
+    '@md': {
+      borderRight: 'none',
+    },
   },
 });
 
@@ -291,7 +333,7 @@ const InfoLabel = styled('p', {
   //   display: 'none',
 });
 
-const InfoText = styled('p', {
+const InfoText = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   fontSize: '18px',
@@ -305,12 +347,17 @@ const InfoText = styled('p', {
 
 const IconsDiv = styled('div', {
   //   width: '100%',
-  marginLeft: 'auto',
-  display: 'flex',
+  display: 'none',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  alignItems: 'end',
-  //   border: '2px solid purple',
+  // border: '2px solid purple',
+
+  '@lg': {
+    display: 'flex',
+
+    marginLeft: 'auto',
+    alignItems: 'end',
+  },
 });
 
 const Icon = styled('img', {});

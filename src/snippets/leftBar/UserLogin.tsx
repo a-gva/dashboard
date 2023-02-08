@@ -22,6 +22,9 @@ const UserLoginDiv = styled('div', {
   flexDirection: 'Row',
   gap: '10px',
   paddingBottom: '20px',
+  width: '100%',
+  // border: 'yellow 2px solid',
+
   '@xxl': {
     gap: '10px',
     paddingBottom: '6px',

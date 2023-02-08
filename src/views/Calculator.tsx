@@ -51,10 +51,6 @@ export default function Calculator() {
     setCalc(value);
   };
 
-  console.log('Calculator Full Object: ', calculatorTheme);
-  console.log('theme to render: ', theme);
-  console.log('bg theme: ', theme.background);
-
   const clearDisplay = () => {
     setCalc('');
   };

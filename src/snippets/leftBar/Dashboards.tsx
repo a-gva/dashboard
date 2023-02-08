@@ -35,8 +35,10 @@ const DashboardsDiv = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   fontSize: '14px',
-  // border: ' blue 3px solid',
   width: '100%',
+  flexWrap: 'wrap',
+  // border: ' blue 3px solid',
+
   '@xxl': {
     flexDirection: 'column',
     paddingBottom: '6px',

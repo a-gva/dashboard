@@ -42,20 +42,38 @@ export default function InfoBar({ data }: { data: IData }) {
 const InfoBarDiv = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  height: '72px',
-  borderBottom: '1px solid #EBEEF3',
+  width: '100%',
+  flexWrap: 'wrap',
   //   background: '#9d3b3b',
   // border: '2px solid blue',
 });
 
 const WorkableArea = styled('div', {
   display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
+  alignItems: 'start',
+  gap: '20px',
+  flexDirection: 'column',
   width: '100%',
+  borderBottom: '1px solid #EBEEF3',
+
   margin: '0px 30px',
-  padding: '26px 5px',
-  // border: '2px solid green',
+  padding: '24px 5px',
+
+  // flexWrap: 'wrap',
+
+  // border: '3px solid red',
+
+  '@md': {
+    alignItems: 'center',
+    margin: '0px 30px',
+    padding: '26px 5px',
+    flexDirection: 'row',
+
+    // border: '3px solid yellow',
+  },
+  '@lg': {
+    // border: '3px solid green',
+  },
 });
 
 const LeftContent = styled('div', {
@@ -64,6 +82,7 @@ const LeftContent = styled('div', {
   alignItems: 'center',
   height: '100%',
   gap: '22px',
+  flexWrap: 'wrap',
 });
 
 const LeftIconDiv = styled('div', {
@@ -88,6 +107,7 @@ const SelectedDiv = styled('div', {
   flexDirection: 'row',
   height: '100%',
   gap: '12px',
+  flexWrap: 'wrap',
   color: 'rgba(0, 0, 0, 0.4)',
   // border: '2px solid blue',
 });
@@ -98,7 +118,12 @@ const RightIconDiv = styled('div', {
   flexDirection: 'row',
   height: '100%',
   gap: '18px',
-  marginLeft: 'auto',
+  flexWrap: 'wrap',
+
+  '@md': {
+    marginLeft: 'auto',
+  },
+
   // border: '2px solid red',
 });
 

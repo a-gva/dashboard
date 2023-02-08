@@ -28,8 +28,8 @@ export default function Contacts({ data }: { data: IData }) {
 }
 
 const ContactsDiv = styled('div', {
-  // background: 'yellow',
-  // color: 'white',
+  width: '100%',
+  // border: '1px solid red',
 });
 
 const Label = styled('p', {

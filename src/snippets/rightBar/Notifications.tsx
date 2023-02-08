@@ -39,12 +39,15 @@ export default function Notifications({ data }: { data: IData }) {
 }
 
 const NotificationsDiv = styled('div', {
-  // background: 'orange',
   display: ' flex',
   flexDirection: 'column',
-  width: '240px',
+  width: '100%',
   // border: '1px solid black',
   // color: 'white',
+
+  '@lg': {
+    width: '240px',
+  },
 });
 
 const Label = styled('p', {
@@ -99,11 +102,15 @@ const MessageDiv = styled('div', {
 });
 
 const Message = styled('p', {
-  whiteSpace: 'nowrap',
-  textOverflow: ' ellipsis',
-  width: '200px',
   overflow: 'hidden',
   marginBottom: '4px',
+  width: '100%',
+  // border: ' 3px solid red',
+  '@lg': {
+    width: '200px',
+    whiteSpace: 'nowrap',
+    textOverflow: ' ellipsis',
+  },
 });
 
 const Time = styled('p', {

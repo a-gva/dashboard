@@ -49,6 +49,7 @@ const PagesDiv = styled('div', {
   flexDirection: 'row',
   fontSize: '14px',
   width: '100%',
+  flexWrap: 'wrap',
   // border: ' red 3px solid',
   paddingBottom: '20px',
   borderBottom: '1px solid #EBEEF3',

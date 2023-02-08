@@ -44,10 +44,14 @@ export default function Activities({ data }: { data: IData }) {
 }
 
 const ActivitiesDiv = styled('div', {
-  // background: 'blue',
   display: ' flex',
   flexDirection: 'column',
-  width: '240px',
+
+  // border: '1px solid black',
+
+  '@lg': {
+    width: '240px',
+  },
   // color: 'white',
 });
 
