@@ -69,6 +69,14 @@ export default function Calculator() {
     console.log('theme variable:', currentTheme);
   }, [currentTheme]);
 
+  const CalculatorDiv = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+  });
+
   const CalculatorArea = styled('div', {
     display: 'flex',
     flexDirection: 'column',
@@ -239,113 +247,115 @@ export default function Calculator() {
   const Icon = styled('img', {});
 
   return (
-    <CalculatorArea>
-      <TopDiv>
-        <DashBoardLink to='/'>Dashboard</DashBoardLink>
-      </TopDiv>
-      <BottomDiv>
-        <ThemeDiv>
-          <ToggleTheme onClick={toggleTheme}>
-            {theme.id === 'dark' ? (
-              <>
-                <Button />
-                <ThemeIcon
-                  src={`/assets/icons/${theme.icon}`}
-                  alt={theme.icon}
-                />
-              </>
-            ) : (
-              <>
-                <ThemeIcon
-                  src={`/assets/icons/${theme.icon}`}
-                  alt={theme.icon}
-                />
-                <Button />
-              </>
-            )}
-          </ToggleTheme>
-        </ThemeDiv>
-        <OperationsArea>
-          <AuxiliaryDisplay>
-            <AuxiliaryData> {result ? result : '0'}</AuxiliaryData>
-          </AuxiliaryDisplay>
-          <MainDisplay>
-            <MainData>{calc || '0'}</MainData>
-          </MainDisplay>
-          <KeysArea>
-            <Row>
-              <Key type='specialOperator' onClick={clearDisplay}>
-                C
-              </Key>
-              <Key type='specialOperator'>
-                <SumDivSub fill={theme.specialOperators.color} />
-              </Key>
-              <Key type='specialOperator'>
-                <Percent fill={theme.specialOperators.color} />
-              </Key>
-              <Key type='operator' onClick={() => updateCalc('/')}>
-                <Icon src={divide} />
-              </Key>
-            </Row>
-            <Row>
-              <Key type='number' onClick={() => updateCalc('7')}>
-                7
-              </Key>
-              <Key type='number' onClick={() => updateCalc('8')}>
-                8
-              </Key>
-              <Key type='number' onClick={() => updateCalc('9')}>
-                9
-              </Key>
-              <Key type='operator' onClick={() => updateCalc('*')}>
-                <Icon src={multiply} />
-              </Key>
-            </Row>
-            <Row>
-              <Key type='number' onClick={() => updateCalc('4')}>
-                4
-              </Key>
-              <Key type='number' onClick={() => updateCalc('5')}>
-                5
-              </Key>
-              <Key type='number' onClick={() => updateCalc('6')}>
-                6
-              </Key>
-              <Key type='operator' onClick={() => updateCalc('-')}>
-                <Icon src={subtraction} />
-              </Key>
-            </Row>
-            <Row>
-              <Key type='number' onClick={() => updateCalc('1')}>
-                1
-              </Key>
-              <Key type='number' onClick={() => updateCalc('2')}>
-                2
-              </Key>
-              <Key type='number' onClick={() => updateCalc('3')}>
-                3
-              </Key>
-              <Key type='operator' onClick={() => updateCalc('+')}>
-                +
-              </Key>
-            </Row>
-            <Row>
-              <Key type='number' onClick={() => updateCalc('.')}>
-                .
-              </Key>
-              <Key type='number' onClick={() => updateCalc('0')}>
-                0
-              </Key>
-              <Key type='number' onClick={deleteLast}>
-                <Delete fill={theme.specialOperators.color} />
-              </Key>
-              <Key type='operator' onClick={calculate}>
-                =
-              </Key>
-            </Row>
-          </KeysArea>
-        </OperationsArea>
-      </BottomDiv>
-    </CalculatorArea>
+    <CalculatorDiv>
+      <CalculatorArea>
+        <TopDiv>
+          <DashBoardLink to='/'>Dashboard</DashBoardLink>
+        </TopDiv>
+        <BottomDiv>
+          <ThemeDiv>
+            <ToggleTheme onClick={toggleTheme}>
+              {theme.id === 'dark' ? (
+                <>
+                  <Button />
+                  <ThemeIcon
+                    src={`/assets/icons/${theme.icon}`}
+                    alt={theme.icon}
+                  />
+                </>
+              ) : (
+                <>
+                  <ThemeIcon
+                    src={`/assets/icons/${theme.icon}`}
+                    alt={theme.icon}
+                  />
+                  <Button />
+                </>
+              )}
+            </ToggleTheme>
+          </ThemeDiv>
+          <OperationsArea>
+            <AuxiliaryDisplay>
+              <AuxiliaryData> {result ? result : '0'}</AuxiliaryData>
+            </AuxiliaryDisplay>
+            <MainDisplay>
+              <MainData>{calc || '0'}</MainData>
+            </MainDisplay>
+            <KeysArea>
+              <Row>
+                <Key type='specialOperator' onClick={clearDisplay}>
+                  C
+                </Key>
+                <Key type='specialOperator'>
+                  <SumDivSub fill={theme.specialOperators.color} />
+                </Key>
+                <Key type='specialOperator'>
+                  <Percent fill={theme.specialOperators.color} />
+                </Key>
+                <Key type='operator' onClick={() => updateCalc('/')}>
+                  <Icon src={divide} />
+                </Key>
+              </Row>
+              <Row>
+                <Key type='number' onClick={() => updateCalc('7')}>
+                  7
+                </Key>
+                <Key type='number' onClick={() => updateCalc('8')}>
+                  8
+                </Key>
+                <Key type='number' onClick={() => updateCalc('9')}>
+                  9
+                </Key>
+                <Key type='operator' onClick={() => updateCalc('*')}>
+                  <Icon src={multiply} />
+                </Key>
+              </Row>
+              <Row>
+                <Key type='number' onClick={() => updateCalc('4')}>
+                  4
+                </Key>
+                <Key type='number' onClick={() => updateCalc('5')}>
+                  5
+                </Key>
+                <Key type='number' onClick={() => updateCalc('6')}>
+                  6
+                </Key>
+                <Key type='operator' onClick={() => updateCalc('-')}>
+                  <Icon src={subtraction} />
+                </Key>
+              </Row>
+              <Row>
+                <Key type='number' onClick={() => updateCalc('1')}>
+                  1
+                </Key>
+                <Key type='number' onClick={() => updateCalc('2')}>
+                  2
+                </Key>
+                <Key type='number' onClick={() => updateCalc('3')}>
+                  3
+                </Key>
+                <Key type='operator' onClick={() => updateCalc('+')}>
+                  +
+                </Key>
+              </Row>
+              <Row>
+                <Key type='number' onClick={() => updateCalc('.')}>
+                  .
+                </Key>
+                <Key type='number' onClick={() => updateCalc('0')}>
+                  0
+                </Key>
+                <Key type='number' onClick={deleteLast}>
+                  <Delete fill={theme.specialOperators.color} />
+                </Key>
+                <Key type='operator' onClick={calculate}>
+                  =
+                </Key>
+              </Row>
+            </KeysArea>
+          </OperationsArea>
+        </BottomDiv>
+      </CalculatorArea>
+    </CalculatorDiv>
   );
 }
