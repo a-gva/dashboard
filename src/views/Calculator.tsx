@@ -1,6 +1,7 @@
 import { styled } from '../theme/stitches.config';
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { calculatorTheme } from '../data/calculatorTheme';
 
@@ -56,9 +57,13 @@ export default function Calculator() {
 
   const CalculatorArea = styled('div', {
     display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'center',
+    alignItems: 'center',
     position: 'relative',
     width: '375px',
     height: '812px',
+    // padding: '10px 20px',
     background: `${theme.background}`,
 
     // background: '#fff',
@@ -68,15 +73,36 @@ export default function Calculator() {
     // border: '3px solid orange',
   });
 
-  const WorkableArea = styled('div', {
+  const TopDiv = styled('div', {
+    display: 'flex',
+    justifyContent: 'end',
+    alignItems: 'center',
+    // border: '3px solid red',
+    width: '100%',
+    padding: '0px 20px',
+  });
+
+  const DashBoardLink = styled(Link, {
+    fontSize: '14px',
+    textDecoration: 'none',
+    color: `${theme.numbers.secondaryColor}`,
+    padding: '5px 20px',
+
+    // hover
+    '&:hover': {
+      opacity: 0.5,
+    },
+  });
+
+  const BottomDiv = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    margin: '60px 20px 66px 20px',
+    margin: '40px 20px',
     // border: '3px solid white',
   });
 
-  const TopArea = styled('div', {
+  const ThemeDiv = styled('div', {
     display: 'flex',
     justifyContent: 'center',
     // background: '#2E2E38',
@@ -123,6 +149,7 @@ export default function Calculator() {
     // justifyContent: 'center',
     alignItems: 'center',
     height: '599px',
+    padding: '10px 20px',
     // border: '3px solid green',
   });
   const AuxiliaryDisplay = styled('div', {
@@ -148,7 +175,6 @@ export default function Calculator() {
     justifyContent: 'flex-end',
     width: '100%',
     marginBottom: '16px',
-
     // border: '3px solid red',
   });
   const MainData = styled('p', {
@@ -173,8 +199,10 @@ export default function Calculator() {
 
   const Row = styled('div', {
     display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
+    justifyContent: 'center',
+    // justifyContent: 'space-between',
+    // width: '100%',
+    gap: '16px',
     // height: '100%',
     // border: '3px solid blue',
   });
@@ -188,7 +216,7 @@ export default function Calculator() {
     height: '72px',
     cursor: 'pointer',
     // color: '#000',
-    // border: '3px solid red',
+    // border: '3px solid ',
     borderRadius: '16px',
     // hover
     '&:hover': {
@@ -219,8 +247,11 @@ export default function Calculator() {
 
   return (
     <CalculatorArea>
-      <WorkableArea>
-        <TopArea>
+      <TopDiv>
+        <DashBoardLink to='/'>Dashboard</DashBoardLink>
+      </TopDiv>
+      <BottomDiv>
+        <ThemeDiv>
           <ToggleTheme onClick={toggleTheme}>
             {theme.id === 'dark' ? (
               <>
@@ -240,7 +271,7 @@ export default function Calculator() {
               </>
             )}
           </ToggleTheme>
-        </TopArea>
+        </ThemeDiv>
         <OperationsArea>
           <AuxiliaryDisplay>
             <AuxiliaryData>{auxiliaryDisplay}</AuxiliaryData>
@@ -313,7 +344,7 @@ export default function Calculator() {
             </Row>
           </KeysArea>
         </OperationsArea>
-      </WorkableArea>
+      </BottomDiv>
     </CalculatorArea>
   );
 }

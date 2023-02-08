@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SumDivSub({ fill }) {
+export default function SumDivSub({ fill }: { fill: string }) {
   return (
     <svg
       width='32'
