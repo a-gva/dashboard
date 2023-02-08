@@ -4,14 +4,10 @@ import { useState, useEffect } from 'react';
 
 import { calculatorTheme } from '../data/calculatorTheme';
 
-import moon from '/assets/icons/moon.svg';
-import del from '/assets/calculator/delete.svg';
-
 import SumDivSub from '../elements/icons/SumDivSub';
 import Percent from '../elements/icons/Percent';
 import Delete from '../elements/icons/Delete';
 
-import percent from '/assets/calculator/percent.svg';
 import divide from '/assets/calculator/divide.svg';
 import multiply from '/assets/calculator/multiply.svg';
 import subtraction from '/assets/calculator/subtraction.svg';
@@ -110,6 +106,7 @@ export default function Calculator() {
     height: '24px',
     background: '#4E505F',
     borderRadius: '50%',
+    transition: 'transform 1s',
     '&:hover': {
       opacity: 0.5,
     },
@@ -239,7 +236,7 @@ export default function Calculator() {
                   src={`/assets/icons/${theme.icon}`}
                   alt={theme.icon}
                 />
-                <Button onClick={toggleTheme} />
+                <Button />
               </>
             )}
           </ToggleTheme>
