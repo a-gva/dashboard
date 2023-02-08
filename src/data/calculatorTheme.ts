@@ -11,7 +11,7 @@ export const calculatorTheme = {
       color: '#FFFFFF',
     },
     specialOperators: {
-      background: '#2E2E38',
+      background: '#4E505F',
       color: '#FFFFFF',
     },
     themeButton: {
