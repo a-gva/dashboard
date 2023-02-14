@@ -14,12 +14,3 @@
   font-size: 100%;
   vertical-align: baseline;
 }
-
-.App {
-  display: flex;
-  justify-content: center;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* height: 100vh; */
-  background: #ebeef3;
-}

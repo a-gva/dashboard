@@ -19,8 +19,6 @@ const DashboardDiv = styled('div', {
   display: 'flex',
   // flexDirection: 'column',
   // justifyContent: 'center',
-  // alignItems: '',
-  height: '100vh',
   '@xxl': {
     alignItems: 'center',
   },
