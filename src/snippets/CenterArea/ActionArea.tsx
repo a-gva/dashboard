@@ -73,7 +73,7 @@ export default function ActionArea({ data }: { data: IData }) {
                     <InfoLabel>{status.label}:</InfoLabel>
                     {status.value < 100 && (
                       // <ProgressBarDiv>
-                      <ProgressBar />
+                      <ProgressBar value={status.value} />
                       // <InfoText>
                       // </InfoText>
                       // </ProgressBarDiv>

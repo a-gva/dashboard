@@ -16,7 +16,7 @@ export default function ProgressBar({ value }: { value: number }) {
   const Front = styled('div', {
     height: '100%',
     backgroundColor: '#C6C7F8',
-    width: '51%',
+    width: `${value}%`,
 
     borderRadius: '0px',
     transition: 'width 0.25s ease-in-out',
