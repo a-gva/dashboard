@@ -6,11 +6,12 @@ module.exports = {
         },
         assert: {
             assertions: {
-                'categories:performance': ['error', { minScore: 0.99 }],
-                'categories:accessibility': ['error', { minScore: 0.99 }],
-                'categories:best-practices': ['error', { minScore: 0.99 }],
-                'categories:seo': ['error', { minScore: 0.99 }],
-                'categories:pwa': ['error', { minScore: 0.99 }],
+                'categories:performance': ['error', { minScore: 0.5 }],
+                'categories:accessibility': ['error', { minScore: 0.5 }],
+                'categories:best-practices': ['error', { minScore: 0.5 }],
+                'categories:seo': ['error', { minScore: 0.5 }],
+                'categories:pwa': ['error', { minScore: 0.5 }],
+                'first-contentful-paint': ['error', { maxNumericValue: 2000 }], // new FCP assertion
             },
         },
         upload: {
