@@ -16,6 +16,7 @@
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.8.2",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
