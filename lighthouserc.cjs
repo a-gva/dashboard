@@ -6,9 +6,11 @@ module.exports = {
         },
         assert: {
             assertions: {
-                'categories:performance': ['error', { minScore: 0.5 }], // 50% performance
-                'categories:accessibility': ['error', { minScore: 0.5 }], // 50% accessibility
-                // add more assertions as needed
+                'categories:performance': ['error', { minScore: 0.99 }],
+                'categories:accessibility': ['error', { minScore: 0.99 }],
+                'categories:best-practices': ['error', { minScore: 0.99 }],
+                'categories:seo': ['error', { minScore: 0.99 }],
+                'categories:pwa': ['error', { minScore: 0.99 }],
             },
         },
         upload: {
