@@ -12,4 +12,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Lighthouse CI
-        run: npx lhci autorun
+        run: npx lhci autorun --rc-file=lighthouserc.cjs
