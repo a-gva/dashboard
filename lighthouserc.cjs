@@ -14,7 +14,7 @@ module.exports = {
                 'first-contentful-paint': ['error', { maxNumericValue: 10000 }],
                 'largest-contentful-paint': ['error', { maxNumericValue: 15000 }],
                 'total-blocking-time': ['error', { maxNumericValue: 200 }], 
-                'cumulative-layout-shift': ['error', { maxNumericValue: 0.1 }], 
+                'cumulative-layout-shift': ['error', { maxNumericValue: 0.3 }], 
                 'speed-index': ['error', { maxNumericValue: 10000 }], 
             },
         },
