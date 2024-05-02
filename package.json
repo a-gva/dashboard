@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "start": "vite",
     "prod": "tsc && vite build --mode prod",
-    "lighthouse": "npx lhci autorun --collect.url=http://localhost:3000 --rc-file=lighthouserc.cjs"
+    "lighthouse": "npx lhci autorun --collect.url=http://localhost:5173 --rc-file=lighthouserc.cjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",

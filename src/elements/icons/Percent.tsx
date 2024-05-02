@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function Percent({ fill }) {
+type DeleteProps = {
+  fill: string;
+};
+
+export default function Percent({ fill }: DeleteProps) {
   return (
     <svg
       width='25'

@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function Delete({ fill }) {
+type DeleteProps = {
+  fill: string;
+};
+
+export default function Delete({ fill }: DeleteProps) {
   return (
     <svg
       width='27'

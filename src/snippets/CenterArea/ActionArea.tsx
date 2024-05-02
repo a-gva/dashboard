@@ -4,6 +4,19 @@ import Separator from '../../elements/Separator';
 
 import ProgressBar from '../../elements/ProgressBar';
 
+interface IValue {
+  current: number;
+  total: number;
+}
+
+interface ISpec {
+  label: string;
+  value: string | IValue;
+}
+
+interface ISpecs {
+  [key: string]: ISpec;
+}
 interface IData {
   menuItems: {
     name: string;
@@ -15,23 +28,7 @@ interface IData {
     label: string;
     value: number;
   };
-  specs: {
-    totalTasks: {
-      label: string;
-      value: {
-        current: number;
-        total: number;
-      };
-    };
-    dueDate: {
-      label: string;
-      value: string;
-    };
-    budgetSpent: {
-      label: string;
-      value: string;
-    };
-  };
+  specs: ISpecs;
   logo: string;
   avatarGroup: string;
 }
@@ -80,14 +77,15 @@ export default function ActionArea({ data }: { data: IData }) {
                     )}
                   </Info>
                   {Object.keys(specs).map((key) => {
-                    if (typeof specs[key].value === 'object') {
+                    const value = specs[key].value;
+                    if (typeof value === 'object' && 'current' in value) {
                       return (
                         <Info key={key}>
                           <InfoLabel>{specs[key].label}:</InfoLabel>
                           <InfoText>
-                            {specs[key].value.current}
+                            {value.current}
                             <Separator />
-                            {specs[key].value.total}
+                            {value.total}
                           </InfoText>
                         </Info>
                       );
@@ -95,7 +93,7 @@ export default function ActionArea({ data }: { data: IData }) {
                       return (
                         <Info key={key}>
                           <InfoLabel>{specs[key].label}:</InfoLabel>
-                          <InfoText>{specs[key].value}</InfoText>
+                          <InfoText>{value}</InfoText>
                         </Info>
                       );
                     }
