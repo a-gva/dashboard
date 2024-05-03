@@ -13,11 +13,6 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Archive node_modules
-        uses: actions/upload-artifact@v2
-        with:
-          name: node_modules
-          path: node_modules
   typecheck:
     needs: setup
     runs-on: ubuntu-latest
@@ -31,7 +26,7 @@ jobs:
       - name: Run typecheck
         run: npm run typecheck
   lint:
-    needs: typecheck
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -43,7 +38,7 @@ jobs:
       - name: Run lint
         run: npm run lint
   lighthouse:
-    needs: lint
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
