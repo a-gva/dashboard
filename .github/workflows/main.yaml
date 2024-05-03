@@ -59,5 +59,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node_modules
+      - name: Extract node_modules
+        run: tar -xzf node_modules.tar.gz
       - name: Run Lighthouse CI
         run: npx lhci autorun --rc-file=lighthouserc.cjs
