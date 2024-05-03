@@ -1,7 +1,7 @@
 name: Main
 on: [push, pull_request]
 jobs:
-  typecheck:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,6 +19,21 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies
         run: npm ci
+      - name: Archive node_modules
+        uses: actions/upload-artifact@v2
+        with:
+          name: node_modules
+          path: node_modules
+  typecheck:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Download node_modules
+        uses: actions/download-artifact@v2
+        with:
+          name: node_modules
       - name: Run typecheck
         run: npm run typecheck
   lint:
@@ -27,19 +42,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Download node_modules
+        uses: actions/download-artifact@v2
         with:
-          node-version: 20.x
-      - name: Cache npm dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Install dependencies
-        run: npm ci
+          name: node_modules
       - name: Run lint
         run: npm run lint
   lighthouse:
@@ -47,18 +53,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - name: Download node_modules
+        uses: actions/download-artifact@v2
         with:
-          node-version: 20.x
-      - name: Cache npm dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Install dependencies
-        run: npm ci
+          name: node_modules
       - name: Run Lighthouse CI
         run: npx lhci autorun --rc-file=lighthouserc.cjs
