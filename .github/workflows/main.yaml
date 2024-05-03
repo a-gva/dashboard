@@ -1,34 +1,13 @@
 name: Main
 on: [push, pull_request]
 jobs:
-  Install-dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-      - name: Cache .pnpm-store
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
-      - name: Install pnpm
-        run: npm install -g pnpm
-      - name: Install dependencies
-        run: pnpm install
   Typecheck:
-    needs: Install-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
       - name: Cache .pnpm-store
@@ -45,13 +24,12 @@ jobs:
       - name: Run typecheck
         run: pnpm run typecheck
   Lint:
-    needs: Install-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
       - name: Cache .pnpm-store
@@ -68,13 +46,12 @@ jobs:
       - name: Run lint
         run: pnpm run lint
   Lighthouse-CI:
-    needs: Install-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
       - name: Cache .pnpm-store

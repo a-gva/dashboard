@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "start": "vite",
     "prod": "tsc && vite build --mode prod",
-    "lighthouse": "npx lhci autorun --collect.url=http://localhost:5173 --rc-file=lighthouserc.cjs",
+    "lighthouse": "lhci autorun --collect.url=http://localhost:5173 --rc-file=lighthouserc.cjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx"
   },
