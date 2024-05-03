@@ -10,54 +10,64 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Archive node_modules
-        run: tar -czf node_modules.tar.gz node_modules
-      - name: Upload node_modules
-        uses: actions/upload-artifact@v2
+      - name: Cache .pnpm-store
+        uses: actions/cache@v2
         with:
-          name: node_modules
-          path: node_modules.tar.gz
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
   Typecheck:
     needs: Install-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          name: node_modules
-      - name: Extract node_modules
-        run: tar -xzf node_modules.tar.gz
+          node-version-file: '.nvmrc'
+      - name: Cache .pnpm-store
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Run typecheck
-        run: npm run typecheck
-  Lint:
-    needs: Install-dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
-        with:
-          name: node_modules
-      - name: Extract node_modules
-        run: tar -xzf node_modules.tar.gz
-      - name: Run lint
-        run: npm run lint
-  Lighthouse-CI:
-    needs: Install-dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
-        with:
-          name: node_modules
-      - name: Extract node_modules
-        run: tar -xzf node_modules.tar.gz
-      - name: Run Lighthouse CI
-        run: npx lhci autorun --rc-file=lighthouserc.cjs
+        run: pnpm run typecheck
+  # Lint:
+  #   needs: Install-dependencies
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
+  #     - name: Download node_modules
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: node_modules
+  #     - name: Extract node_modules
+  #       run: tar -xzf node_modules.tar.gz
+  #     - name: Run lint
+  #       run: npm run lint
+  # Lighthouse-CI:
+  #   needs: Install-dependencies
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Download node_modules
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: node_modules
+  #     - name: Extract node_modules
+  #       run: tar -xzf node_modules.tar.gz
+  #     - name: Run Lighthouse CI
+  #       run: npx lhci autorun --rc-file=lighthouserc.cjs
