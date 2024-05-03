@@ -15,8 +15,8 @@ jobs:
         run: npm ci
       - name: Archive node_modules
         run: tar -czf node_modules.tar.gz node_modules
-      - name: Add node_modules/.bin to PATH
-        run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
+      # - name: Add node_modules/.bin to PATH
+      #   run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
       - name: Upload node_modules
         uses: actions/upload-artifact@v2
         with:
