@@ -16,6 +16,7 @@ export default function Pages({ data }: { data: IData }) {
       <LabelDiv>
         <LabelItem>{label}</LabelItem>
       </LabelDiv>
+      {/* eslint-disable-next-line */}
       {items.map((item: any) => {
         return (
           <div key={item.name}>
@@ -24,8 +25,8 @@ export default function Pages({ data }: { data: IData }) {
               <ItemIcon src={`/assets/icons/${item.image}`} alt={item.image} />
               <ItemName>{item.name}</ItemName>
             </ItemDiv>
-            {item.subItems &&
-              item.subItems.map((subItem: any) => {
+            {/* eslint-disable-next-line */}
+            {item.subItems && item.subItems.map((subItem: any) => {
                 return (
                   <SubItemName key={subItem.name}>{subItem.name}</SubItemName>
                 );

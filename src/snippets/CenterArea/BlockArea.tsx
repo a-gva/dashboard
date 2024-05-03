@@ -103,14 +103,6 @@ const WorkableArea = styled('div', {
   // border: '2px solid blue',
 });
 
-const OutterText = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-
-  // border: '2px solid blue',
-});
-
 const MainArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',

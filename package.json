@@ -10,7 +10,8 @@
     "start": "vite",
     "prod": "tsc && vite build --mode prod",
     "lighthouse": "npx lhci autorun --collect.url=http://localhost:5173 --rc-file=lighthouserc.cjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
@@ -24,8 +25,11 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.57.0",
     "lighthouse": "^12.0.0",
     "postcss": "^8.4.21",
     "typescript": "^4.9.3",

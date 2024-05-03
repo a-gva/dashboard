@@ -2,12 +2,14 @@ import { styled } from '../../theme/stitches.config';
 
 import arrow from '/assets/icons/arrowLineRight.svg';
 
+interface IItems {
+  name: string;
+  image: string;
+}
+
 interface IData {
   label: string;
-  items: {
-    name: string;
-    image: string;
-  }[];
+  items: IItems[];
 }
 
 export default function Dashboards({ data }: { data: IData }) {
@@ -18,7 +20,7 @@ export default function Dashboards({ data }: { data: IData }) {
       <LabelDiv>
         <LabelItem>{label}</LabelItem>
       </LabelDiv>
-      {items.map((item: any) => {
+      {items.map((item: IItems) => {
         return (
           <Item key={item.name}>
             <LabelArrow src={arrow} />
